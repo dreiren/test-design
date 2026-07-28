@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  --blue: #1b2a6b;
+  --blue-deep: #121c4a;
+  --blue-soft: #eef2fb;
+  --gold: #c9a227;
+  --gold-deep: #9a7a12;
+  --maroon: #6b2d2d;
+  --canvas: #f7f9fd;
+  --ink: #1a1f2e;
+  --ink-muted: #5b6478;
+}
+
+@theme inline {
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--gold) 35%, white);
+  color: var(--blue-deep);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.85s ease-out both;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 10s ease-in-out 1s infinite;
+}
+
+.design-a {
+  --font-display: var(--font-outfit);
+  --font-body: var(--font-jakarta);
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+}
+
+.design-b {
+  --font-display: var(--font-sora);
+  --font-body: var(--font-manrope);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+}
+
+.picker-shell {
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 10% 0%, rgba(27, 42, 107, 0.1), transparent 40%),
+    radial-gradient(ellipse at 90% 10%, rgba(201, 162, 39, 0.16), transparent 35%),
+    linear-gradient(180deg, #ffffff 0%, #f7f9fd 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-fade-up,
+  .animate-float,
+  .animate-float-delayed {
+    animation: none !important;
+  }
+}
