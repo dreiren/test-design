@@ -17,24 +17,43 @@
   --font-display: var(--font-display);
 }
 
-* {
-  box-sizing: border-box;
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--canvas);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Keep in @layer base so Tailwind text-* utilities can override on CTAs */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
-html {
-  scroll-behavior: smooth;
+/* Solid blue surfaces always use light copy for contrast */
+.bg-blue-surface,
+a.bg-blue-surface,
+button.bg-blue-surface {
+  background-color: var(--blue) !important;
+  color: #ffffff !important;
 }
 
-body {
-  margin: 0;
-  background: var(--canvas);
-  color: var(--ink);
-  -webkit-font-smoothing: antialiased;
+.bg-blue-surface .text-muted-on-blue {
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.bg-blue-surface .text-accent-on-blue {
+  color: var(--gold) !important;
 }
 
 ::selection {

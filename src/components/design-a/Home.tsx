@@ -45,7 +45,7 @@ export function DesignAHome() {
             <div className="animate-fade-up mt-8 flex flex-wrap gap-3 delay-300">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 rounded-full bg-[var(--blue)] px-6 py-3.5 text-sm font-bold text-white shadow-[0_12px_30px_rgba(27,42,107,0.22)] transition hover:-translate-y-0.5 hover:bg-[var(--blue-deep)]"
+                className="inline-flex items-center gap-2 rounded-full bg-blue-surface bg-[var(--blue)] px-6 py-3.5 text-sm font-bold text-white shadow-[0_12px_30px_rgba(27,42,107,0.22)] transition hover:-translate-y-0.5 hover:bg-[var(--blue-deep)]"
               >
                 Request a Consultation
                 <Icon name="arrow" className="h-4 w-4" />
@@ -187,13 +187,13 @@ export function DesignAHome() {
             <Reveal className="mt-12 flex flex-wrap gap-3">
               <a
                 href="#contact"
-                className="rounded-full bg-[var(--blue)] px-5 py-3 text-sm font-bold text-white"
+                className="rounded-full bg-blue-surface bg-[var(--blue)] px-5 py-3 text-sm font-bold text-white"
               >
                 Request a Proposal
               </a>
               <a
                 href="#contact"
-                className="rounded-full bg-[var(--blue)] px-5 py-3 text-sm font-bold text-white"
+                className="rounded-full bg-blue-surface bg-[var(--blue)] px-5 py-3 text-sm font-bold text-white"
               >
                 Contact Our Team
               </a>
@@ -230,7 +230,7 @@ export function DesignAHome() {
               </div>
               <a
                 href={`${BASE}/about`}
-                className="mt-6 inline-flex items-center gap-2 rounded-full bg-[var(--blue)] px-5 py-3 text-sm font-bold text-white transition hover:bg-[var(--blue-deep)]"
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-blue-surface bg-[var(--blue)] px-5 py-3 text-sm font-bold text-white transition hover:bg-[var(--blue-deep)]"
               >
                 Read full About Us
                 <Icon name="arrow" className="h-4 w-4" />
@@ -310,7 +310,7 @@ export function DesignAHome() {
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {jobSteps.map((step, i) => (
               <Reveal key={step.step} delay={i * 80}>
-                <div className="rounded-3xl bg-[var(--blue)] p-6 text-white">
+                <div className="rounded-3xl bg-blue-surface bg-[var(--blue)] p-6 text-white">
                   <p className="font-[family-name:var(--font-display)] text-4xl font-extrabold text-[var(--gold)]">
                     {step.step}
                   </p>

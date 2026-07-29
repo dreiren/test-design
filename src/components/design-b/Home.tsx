@@ -46,7 +46,7 @@ export function DesignBHome() {
             <div className="animate-fade-up mt-8 flex flex-wrap gap-3 delay-300">
               <a
                 href="#contact"
-                className="rounded-2xl bg-[var(--blue)] px-6 py-3.5 text-sm font-bold text-white shadow-[0_16px_40px_rgba(27,42,107,0.25)] transition hover:-translate-y-0.5"
+                className="rounded-2xl bg-blue-surface bg-[var(--blue)] px-6 py-3.5 text-sm font-bold text-white shadow-[0_16px_40px_rgba(27,42,107,0.25)] transition hover:-translate-y-0.5"
               >
                 Request a Consultation
               </a>
@@ -65,7 +65,7 @@ export function DesignBHome() {
           <div className="grid gap-4 md:grid-cols-2">
             <a
               href="#services"
-              className="relative overflow-hidden rounded-[2rem] bg-[var(--blue)] p-7 text-white transition hover:brightness-105"
+              className="relative overflow-hidden rounded-[2rem] bg-blue-surface bg-[var(--blue)] p-7 text-white transition hover:brightness-105"
             >
               <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-[var(--gold)]/30 blur-2xl" />
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--gold)]">
@@ -170,12 +170,12 @@ export function DesignBHome() {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#contact" className="rounded-2xl bg-[var(--blue)] px-5 py-3 text-sm font-bold text-white">
+              <a href="#contact" className="rounded-2xl bg-blue-surface bg-[var(--blue)] px-5 py-3 text-sm font-bold text-white">
                 Request a Proposal
               </a>
               <a
                 href="#contact"
-                className="rounded-2xl bg-[var(--blue)] px-5 py-3 text-sm font-bold text-white"
+                className="rounded-2xl bg-blue-surface bg-[var(--blue)] px-5 py-3 text-sm font-bold text-white"
               >
                 Contact Our Team
               </a>
@@ -196,7 +196,7 @@ export function DesignBHome() {
               <p className="mt-4 leading-relaxed text-[var(--ink-muted)]">{company.aboutGlance}</p>
               <p className="mt-4 leading-relaxed text-[var(--ink-muted)]">{company.philosophy}</p>
               <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-2xl bg-[var(--blue)] p-4 text-white">
+                <div className="rounded-2xl bg-blue-surface bg-[var(--blue)] p-4 text-white">
                   <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--gold)]">
                     Mission
                   </p>
@@ -211,7 +211,7 @@ export function DesignBHome() {
               </div>
               <a
                 href={`${BASE}/about`}
-                className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-[var(--blue)] px-5 py-3 text-sm font-bold text-white"
+                className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-blue-surface bg-[var(--blue)] px-5 py-3 text-sm font-bold text-white"
               >
                 Read full About Us
                 <Icon name="arrow" className="h-4 w-4" />
@@ -244,7 +244,7 @@ export function DesignBHome() {
         </section>
 
         {/* Success stories */}
-        <section className="bg-[var(--blue)] py-20 text-white">
+        <section className="bg-blue-surface bg-[var(--blue)] py-20 text-white">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <Reveal>
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--gold)]">
@@ -308,7 +308,7 @@ export function DesignBHome() {
             </a>
             <a
               href="#contact"
-              className="rounded-2xl bg-[var(--blue)] px-6 py-3.5 text-sm font-bold text-white"
+              className="rounded-2xl bg-blue-surface bg-[var(--blue)] px-6 py-3.5 text-sm font-bold text-white"
             >
               Talk to Recruitment
             </a>

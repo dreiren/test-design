@@ -83,7 +83,7 @@ export function SiteNav({ basePath, variant }: Props) {
           </a>
           <a
             href={`${basePath}#contact`}
-            className="rounded-full bg-[var(--blue)] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[var(--blue-deep)]"
+            className="rounded-full bg-blue-surface bg-[var(--blue)] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[var(--blue-deep)]"
           >
             Request a Consultation
           </a>
@@ -121,7 +121,7 @@ export function SiteNav({ basePath, variant }: Props) {
             </a>
             <a
               href={`${basePath}#contact`}
-              className="rounded-full bg-[var(--blue)] px-4 py-3 text-center font-semibold text-white"
+              className="rounded-full bg-blue-surface bg-[var(--blue)] px-4 py-3 text-center font-semibold text-white"
               onClick={() => setOpen(false)}
             >
               Request a Consultation

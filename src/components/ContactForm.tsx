@@ -67,7 +67,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
       </label>
       <button
         type="submit"
-        className="w-full rounded-full bg-[var(--blue)] px-5 py-3.5 text-sm font-bold text-white transition hover:bg-[var(--blue-deep)] sm:w-auto"
+        className="w-full rounded-full bg-blue-surface bg-[var(--blue)] px-5 py-3.5 text-sm font-bold text-white transition hover:bg-[var(--blue-deep)] sm:w-auto"
       >
         Send message
       </button>

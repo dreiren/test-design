@@ -34,7 +34,7 @@ export function DesignBAbout() {
             <div className="animate-fade-up mt-8 flex flex-wrap gap-3 delay-300">
               <a
                 href={`${BASE}#contact`}
-                className="rounded-2xl bg-[var(--blue)] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5"
+                className="rounded-2xl bg-blue-surface bg-[var(--blue)] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5"
               >
                 Request a Consultation
               </a>
@@ -86,7 +86,7 @@ export function DesignBAbout() {
           </div>
 
           <Reveal className="mt-6 flex flex-wrap gap-3">
-            <div className="rounded-2xl bg-[var(--blue)] px-5 py-4 text-white">
+            <div className="rounded-2xl bg-blue-surface bg-[var(--blue)] px-5 py-4 text-white">
               <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--gold)]">
                 DOLE Permit
               </p>
@@ -101,7 +101,7 @@ export function DesignBAbout() {
           </Reveal>
         </section>
 
-        <section className="bg-[var(--blue)] py-16 text-white">
+        <section className="bg-blue-surface bg-[var(--blue)] py-16 text-white">
           <div className="mx-auto grid max-w-6xl gap-6 px-4 sm:px-6 md:grid-cols-2">
             <Reveal>
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--gold)]">
@@ -163,7 +163,7 @@ export function DesignBAbout() {
                 <div className="mt-6 flex flex-wrap gap-3">
                   <a
                     href={`${BASE}#contact`}
-                    className="inline-flex items-center gap-2 rounded-2xl bg-[var(--blue)] px-5 py-3 text-sm font-bold text-white"
+                    className="inline-flex items-center gap-2 rounded-2xl bg-blue-surface bg-[var(--blue)] px-5 py-3 text-sm font-bold text-white"
                   >
                     Contact Our Team <Icon name="arrow" className="h-4 w-4" />
                   </a>

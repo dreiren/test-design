@@ -34,7 +34,7 @@ export function DesignAAbout() {
             <div className="animate-fade-up mt-8 flex flex-wrap gap-3 delay-300">
               <a
                 href={`${BASE}#contact`}
-                className="inline-flex items-center gap-2 rounded-full bg-[var(--blue)] px-6 py-3.5 text-sm font-bold text-white transition hover:bg-[var(--blue-deep)]"
+                className="inline-flex items-center gap-2 rounded-full bg-blue-surface bg-[var(--blue)] px-6 py-3.5 text-sm font-bold text-white transition hover:bg-[var(--blue-deep)]"
               >
                 Request a Consultation
                 <Icon name="arrow" className="h-4 w-4" />
