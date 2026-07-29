@@ -193,7 +193,7 @@ export function DesignAHome() {
               </a>
               <a
                 href="#contact"
-                className="rounded-full border border-[var(--blue)]/20 bg-white px-5 py-3 text-sm font-bold text-[var(--blue)]"
+                className="rounded-full bg-[var(--blue)] px-5 py-3 text-sm font-bold text-white"
               >
                 Contact Our Team
               </a>

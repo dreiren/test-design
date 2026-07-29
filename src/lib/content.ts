@@ -210,15 +210,14 @@ export const jobSteps = [
 ];
 
 export const navLinks = [
-  { href: "#services", label: "Services", homeOnly: true },
-  { href: "#why-urc", label: "Why URC", homeOnly: true },
+  { href: "#services", label: "Services" },
+  { href: "#why-urc", label: "Why URC" },
   { href: "/about", label: "About" },
-  { href: "#careers", label: "Careers", homeOnly: true },
-  { href: "#insights", label: "Insights", homeOnly: true },
-  { href: "#contact", label: "Contact", homeOnly: true },
+  { href: "#careers", label: "Careers" },
+  { href: "#insights", label: "Insights" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export function resolveNavHref(basePath: string, href: string) {
-  if (href.startsWith("#")) return `${basePath}${href}`;
   return `${basePath}${href}`;
 }
