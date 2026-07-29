@@ -308,7 +308,7 @@ export function DesignBHome() {
             </a>
             <a
               href="#contact"
-              className="rounded-2xl border border-[var(--blue)]/20 px-6 py-3.5 text-sm font-bold text-[var(--blue)]"
+              className="rounded-2xl bg-[var(--blue)] px-6 py-3.5 text-sm font-bold text-white"
             >
               Talk to Recruitment
             </a>
