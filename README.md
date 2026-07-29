@@ -8,7 +8,9 @@ Next.js redesign concepts for [United Royale Corporation](https://unitedroyaleco
 | --- | --- | --- |
 | `/` | Picker | Compare both concepts |
 | `/design-a` | **Soft Path** | Calm light UI, Outfit + Plus Jakarta Sans, dual business/job pathways |
+| `/design-a/about` | Soft Path About | Full About Us from unitedroyalecorp.net/about |
 | `/design-b` | **Bright Signal** | Fresh Gen Z/Alpha energy, Sora + Manrope, scan-friendly bento services |
+| `/design-b/about` | Bright Signal About | Full About Us from unitedroyalecorp.net/about |
 
 Both keep a **light** overall look and pull **logo colors** (royal blue, gold, maroon accents) into the navigation and CTAs.
 

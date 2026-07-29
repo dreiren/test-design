@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Icon } from "@/components/Icon";
-import { company, navLinks } from "@/lib/content";
+import { company, navLinks, resolveNavHref } from "@/lib/content";
 
 type Props = {
   basePath: string;
@@ -64,7 +64,11 @@ export function SiteNav({ basePath, variant }: Props) {
 
         <nav className="hidden items-center gap-5 lg:flex">
           {navLinks.map((link) => (
-            <a key={link.href} href={`${basePath}${link.href}`} className={linkClass}>
+            <a
+              key={link.href}
+              href={resolveNavHref(basePath, link.href)}
+              className={linkClass}
+            >
               {link.label}
             </a>
           ))}
@@ -101,7 +105,7 @@ export function SiteNav({ basePath, variant }: Props) {
             {navLinks.map((link) => (
               <a
                 key={link.href}
-                href={`${basePath}${link.href}`}
+                href={resolveNavHref(basePath, link.href)}
                 className="rounded-xl px-3 py-3 text-base font-semibold text-[var(--ink)] hover:bg-[var(--blue-soft)]"
                 onClick={() => setOpen(false)}
               >

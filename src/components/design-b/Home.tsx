@@ -52,7 +52,7 @@ export function DesignBHome() {
               </a>
               <a
                 href="#careers"
-                className="rounded-2xl bg-[var(--gold)] px-6 py-3.5 text-sm font-bold text-[var(--blue-deep)] transition hover:-translate-y-0.5 hover:brightness-105"
+                className="rounded-2xl bg-[var(--gold)] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:brightness-105"
               >
                 Apply Now
               </a>
@@ -209,6 +209,13 @@ export function DesignBHome() {
                   <p className="mt-2 text-sm leading-relaxed text-[var(--ink)]">{company.vision}</p>
                 </div>
               </div>
+              <a
+                href={`${BASE}/about`}
+                className="mt-6 inline-flex items-center gap-2 rounded-2xl bg-[var(--blue)] px-5 py-3 text-sm font-bold text-white"
+              >
+                Read full About Us
+                <Icon name="arrow" className="h-4 w-4" />
+              </a>
             </Reveal>
 
             <Reveal delay={100}>
@@ -282,7 +289,7 @@ export function DesignBHome() {
             {jobSteps.map((step, i) => (
               <Reveal key={step.step} delay={i * 70}>
                 <div className="relative rounded-[1.75rem] border border-[var(--blue)]/10 bg-white p-6 pt-10">
-                  <span className="absolute -top-4 left-6 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--gold)] font-bold text-[var(--blue-deep)]">
+                  <span className="absolute -top-4 left-6 inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--gold)] font-bold text-white">
                     {step.step}
                   </span>
                   <h3 className="text-xl font-bold text-[var(--blue)]">{step.title}</h3>
@@ -295,7 +302,7 @@ export function DesignBHome() {
           <Reveal className="mt-10 flex justify-center gap-3">
             <a
               href="#contact"
-              className="rounded-2xl bg-[var(--gold)] px-6 py-3.5 text-sm font-bold text-[var(--blue-deep)]"
+              className="rounded-2xl bg-[var(--gold)] px-6 py-3.5 text-sm font-bold text-white"
             >
               Apply Now
             </a>

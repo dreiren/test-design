@@ -28,7 +28,7 @@ export function SiteFooter({ basePath }: { basePath: string }) {
           </p>
           <div className="mt-3 flex flex-col gap-2 text-sm text-[var(--ink)]/80">
             <a href={`${basePath}#services`}>Services</a>
-            <a href={`${basePath}#about`}>About</a>
+            <a href={`${basePath}/about`}>About</a>
             <a href={`${basePath}#careers`}>Careers</a>
             <a href={`${basePath}#contact`}>Contact</a>
             <Link href="/" className="text-[var(--blue)]">

@@ -228,6 +228,13 @@ export function DesignAHome() {
                   <p className="mt-1 text-sm leading-relaxed text-[var(--ink)]">{company.vision}</p>
                 </div>
               </div>
+              <a
+                href={`${BASE}/about`}
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-[var(--blue)] px-5 py-3 text-sm font-bold text-white transition hover:bg-[var(--blue-deep)]"
+              >
+                Read full About Us
+                <Icon name="arrow" className="h-4 w-4" />
+              </a>
             </Reveal>
 
             <Reveal delay={120}>
@@ -317,7 +324,7 @@ export function DesignAHome() {
           <Reveal className="mt-8">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full bg-[var(--gold)] px-6 py-3.5 text-sm font-bold text-[var(--blue-deep)] transition hover:brightness-105"
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--gold)] px-6 py-3.5 text-sm font-bold text-white transition hover:brightness-105"
             >
               Apply Now <Icon name="arrow" className="h-4 w-4" />
             </a>
