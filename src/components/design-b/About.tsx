@@ -3,7 +3,7 @@ import { Icon } from "@/components/Icon";
 import { Reveal } from "@/components/Reveal";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteNav } from "@/components/SiteNav";
-import { company, coreValues, stats } from "@/lib/content";
+import { company, coreValues } from "@/lib/content";
 
 const BASE = "/design-b";
 
@@ -13,30 +13,31 @@ export function DesignBAbout() {
       <SiteNav basePath={BASE} variant="b" />
 
       <main>
-        <section className="relative isolate min-h-[min(70vh,640px)] overflow-hidden">
+        {/* Hero */}
+        <section className="relative isolate min-h-[min(68vh,620px)] overflow-hidden">
           <div
             className="absolute inset-0 scale-105 bg-cover bg-[center_30%]"
             style={{ backgroundImage: "url('/images/urc-business-philosophy.jpg')" }}
             aria-hidden
           />
-          <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(247,250,255,0.96)_0%,rgba(247,250,255,0.86)_45%,rgba(255,248,232,0.4)_100%)]" />
-          <div className="relative mx-auto flex min-h-[min(70vh,640px)] max-w-6xl flex-col justify-center px-4 py-16 sm:px-6">
+          <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(247,250,255,0.96)_0%,rgba(247,250,255,0.88)_48%,rgba(255,248,232,0.4)_100%)]" />
+          <div className="relative mx-auto flex min-h-[min(68vh,620px)] max-w-6xl flex-col justify-center px-4 py-16 sm:px-6">
             <p className="animate-fade-up text-xs font-bold uppercase tracking-[0.18em] text-[var(--gold-deep)]">
               About us
             </p>
-            <h1 className="animate-fade-up mt-3 max-w-3xl font-[family-name:var(--font-display)] text-4xl font-bold tracking-tight text-[var(--blue)] delay-100 sm:text-5xl md:text-6xl">
-              United Royale Corporation (URC) at a glance
+            <h1 className="animate-fade-up mt-3 max-w-4xl font-[family-name:var(--font-display)] text-3xl font-bold tracking-tight text-[var(--blue)] delay-100 sm:text-5xl md:text-6xl">
+              United Royale Corporation (URC) at a glance….
             </h1>
             <p className="animate-fade-up mt-5 max-w-2xl text-base leading-relaxed text-[var(--ink-muted)] delay-200 sm:text-lg">
-              Established {company.established}. Licensed. Nationwide. Built to nurture
-              partnerships — not just placements.
+              Established {company.established}. Licensed under DOLE. We provide solutions with
+              integrity and reliability.
             </p>
             <div className="animate-fade-up mt-8 flex flex-wrap gap-3 delay-300">
               <a
-                href={`${BASE}#contact`}
+                href="#contact"
                 className="rounded-2xl bg-blue-surface bg-[var(--blue)] px-6 py-3.5 text-sm font-bold text-white transition hover:-translate-y-0.5"
               >
-                Request a Consultation
+                Contact Our Team
               </a>
               <a
                 href={`${BASE}#careers`}
@@ -48,49 +49,34 @@ export function DesignBAbout() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-          <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-            {stats.map((s, i) => (
-              <Reveal key={s.label} delay={i * 60}>
-                <div className="rounded-[1.5rem] bg-white p-5 text-center ring-1 ring-[var(--blue)]/10">
-                  <p className="font-[family-name:var(--font-display)] text-3xl font-bold text-[var(--blue)]">
-                    {s.value}
-                  </p>
-                  <p className="mt-2 text-sm font-semibold text-[var(--ink)]">{s.label}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
+        {/* At a glance content */}
+        <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <Reveal>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--gold-deep)]">
-              Our story
+              Our company
             </p>
             <h2 className="mt-2 font-[family-name:var(--font-display)] text-3xl font-bold text-[var(--blue)] sm:text-4xl">
-              From 2000 to today: integrity and reliability
+              United Royale Corporation (URC) at a glance
             </h2>
           </Reveal>
 
-          <div className="mt-8 grid gap-4 lg:grid-cols-2">
+          <div className="mt-8 grid gap-4">
             {company.aboutParagraphs.map((paragraph, i) => (
-              <Reveal key={paragraph.slice(0, 40)} delay={(i % 2) * 80}>
-                <div className="h-full rounded-[1.5rem] border border-[var(--blue)]/8 bg-white/90 p-6">
-                  <p className="text-sm leading-relaxed text-[var(--ink-muted)] sm:text-base">
-                    {paragraph}
-                  </p>
-                </div>
+              <Reveal key={paragraph} delay={Math.min(i * 40, 200)}>
+                <p className="rounded-[1.25rem] border border-[var(--blue)]/8 bg-white px-5 py-4 text-base leading-relaxed text-[var(--ink-muted)]">
+                  {paragraph}
+                </p>
               </Reveal>
             ))}
           </div>
 
           <Reveal className="mt-6 flex flex-wrap gap-3">
             <div className="rounded-2xl bg-blue-surface bg-[var(--blue)] px-5 py-4 text-white">
-              <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--gold)]">
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-accent-on-blue text-[var(--gold)]">
                 DOLE Permit
               </p>
-              <p className="mt-1 font-semibold">{company.permit}</p>
+              <p className="mt-1 text-sm text-muted-on-blue text-white/80">{company.doleOrder}</p>
+              <p className="mt-1 font-semibold">Permit No. {company.permit}</p>
             </div>
             <div className="rounded-2xl bg-[var(--gold)] px-5 py-4 text-white">
               <p className="text-xs font-bold uppercase tracking-[0.14em] text-white/80">
@@ -98,26 +84,48 @@ export function DesignBAbout() {
               </p>
               <p className="mt-1 font-semibold">{company.paidUpCapital}</p>
             </div>
+            <div className="rounded-2xl border border-[var(--blue)]/15 bg-white px-5 py-4">
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--maroon)]">
+                Established
+              </p>
+              <p className="mt-1 font-semibold text-[var(--blue)]">{company.established}</p>
+            </div>
           </Reveal>
         </section>
 
+        {/* Mission and Vision */}
         <section className="bg-blue-surface bg-[var(--blue)] py-16 text-white">
-          <div className="mx-auto grid max-w-6xl gap-6 px-4 sm:px-6 md:grid-cols-2">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6">
             <Reveal>
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--gold)]">
-                Mission
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent-on-blue text-[var(--gold)]">
+                Mission and Vision
               </p>
-              <p className="mt-3 text-lg leading-relaxed text-white/90">{company.mission}</p>
+              <h2 className="mt-2 font-[family-name:var(--font-display)] text-3xl font-bold sm:text-4xl">
+                What we stand for
+              </h2>
             </Reveal>
-            <Reveal delay={90}>
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--gold)]">
-                Vision
-              </p>
-              <p className="mt-3 text-lg leading-relaxed text-white/90">{company.vision}</p>
-            </Reveal>
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
+              <Reveal>
+                <div className="rounded-[1.5rem] bg-white/10 p-6 backdrop-blur">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--gold)]">
+                    Mission
+                  </p>
+                  <p className="mt-3 text-base leading-relaxed text-white/90">{company.mission}</p>
+                </div>
+              </Reveal>
+              <Reveal delay={90}>
+                <div className="rounded-[1.5rem] bg-white/10 p-6 backdrop-blur">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--gold)]">
+                    Vision
+                  </p>
+                  <p className="mt-3 text-base leading-relaxed text-white/90">{company.vision}</p>
+                </div>
+              </Reveal>
+            </div>
           </div>
         </section>
 
+        {/* WE CARE */}
         <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <Reveal>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-[var(--gold-deep)]">
@@ -150,28 +158,33 @@ export function DesignBAbout() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-4 pb-20 sm:px-6">
+        {/* Contact us */}
+        <section id="contact" className="mx-auto max-w-6xl px-4 pb-20 sm:px-6">
           <div className="overflow-hidden rounded-[2rem] bg-gradient-to-br from-[var(--blue-soft)] via-white to-[#FFF8E8] p-6 sm:p-10">
             <div className="grid gap-10 lg:grid-cols-2">
               <Reveal>
-                <h2 className="font-[family-name:var(--font-display)] text-3xl font-bold text-[var(--blue)]">
-                  Talk with URC
+                <h2 className="font-[family-name:var(--font-display)] text-3xl font-bold text-[var(--blue)] sm:text-4xl">
+                  Contact us
                 </h2>
                 <p className="mt-3 text-[var(--ink-muted)]">
-                  Consultation, proposal, or application — we&apos;ll guide the next step.
+                  Tel No. {company.phone}
+                  <br />
+                  <a className="font-semibold text-[var(--blue)] underline" href={`mailto:${company.email}`}>
+                    {company.email}
+                  </a>
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <a
-                    href={`${BASE}#contact`}
+                    href="#contact"
                     className="inline-flex items-center gap-2 rounded-2xl bg-blue-surface bg-[var(--blue)] px-5 py-3 text-sm font-bold text-white"
                   >
-                    Contact Our Team <Icon name="arrow" className="h-4 w-4" />
+                    Send a message <Icon name="arrow" className="h-4 w-4" />
                   </a>
                   <a
-                    href={`${BASE}#careers`}
-                    className="rounded-2xl bg-[var(--gold)] px-5 py-3 text-sm font-bold text-white"
+                    href={`${BASE}`}
+                    className="rounded-2xl border border-[var(--blue)]/20 bg-white px-5 py-3 text-sm font-bold text-[var(--blue)]"
                   >
-                    Apply Now
+                    ← Back to Bright Signal home
                   </a>
                 </div>
                 <div className="mt-6 space-y-3">

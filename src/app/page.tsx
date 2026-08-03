@@ -10,7 +10,7 @@ const designs = [
     points: [
       "Light sky canvas with royal blue + gold nav accents from the logo",
       "Dual doors for businesses and non-technical job seekers",
-      "Grouped services, stats, CARE values, insights & strong CTAs",
+      "Full About Us page matching unitedroyalecorp.net/about",
     ],
     image: "/images/urc-header.jpg",
   },
@@ -22,7 +22,7 @@ const designs = [
     points: [
       "Airy light UI with logo blue brand bar and gold Apply CTAs",
       "Scan-friendly service bento and stress-free career steps",
-      "Story-forward About, testimonials, and always-visible next actions",
+      "Full About Us page matching unitedroyalecorp.net/about",
     ],
     image: "/images/urc-business-philosophy.jpg",
   },

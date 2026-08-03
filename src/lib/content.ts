@@ -12,14 +12,19 @@ export const company = {
   aboutGlance:
     "Incorporated in 2000, United Royale Corporation is a licensed outsourcing service provider registered with the Department of Labor and Employment under Department Order No. 174, Series of 2017 (Permit No. RO1-09-23-00021). We deliver end-to-end service solutions — from screening highly competent personnel to deploying technical, administrative, and clerical support across industries.",
   aboutParagraphs: [
-    "Our company, incorporated in the year 2000, is a licensed outsourcing service provider, duly registered with the Department of Labor and Employment, under Department Order No. 174, Series of 2017, with Permit No. RO1-09-23-00021. With solid years of understanding the industry, we deliver service solutions from outsourcing and screening of highly competent and qualified service personnel to deployment of technical, administrative, and clerical support staff, to meet our clients’ varied service requirements in their respective business operations.",
+    "Our company, incorporated in the year 2000, is a licensed outsourcing service provider, duly registered with the Department of Labor and Employment, under Department Order No. 174, Series of 2017, with Permit No. RO1-09-23-00021",
+    "With solid years of understanding the industry, we deliver service solutions from outsourcing and screening of highly competent and qualified service personnel to deployment of technical, administrative, and clerical support staff, to meet our clients’ varied service requirements in their respective business operations.",
     "We continuously endeavor to be the leading service provider in the Philippines by giving topnotch quality services thru our human capital and resources who possess the necessary ethical knowledge, skills and abilities that will meet the client’s specific demands, needs and expectations, cutting across a broad spectrum of business and industries.",
-    "Our corporate values of professionalism and commitment to excellence give us the competitive mark by providing customized, personalized, and quality outsourcing services at the most reasonable cost. Our rigid recruitment, screening and deployment process coupled by continued enhancement of our personnel and upgrade of equipment, ensure that deployed personnel are equipped with the right attitude, values, and dedication to their job.",
-    "With a paid-up capital of PhP 10 Million Pesos, our company is grounded on a foundation that our partners could rely to provide them with professional services all year round. Our wealth of experience speaks for what we are and what we aim to achieve with our partner clients.",
-    "In URC we provide solutions! We don’t just develop clients, we nurture partnerships! Your service requirements, our priority with integrity and reliability!",
+    "Our corporate values of professionalism and commitment to excellence give us the competitive mark by providing customized, personalized, and quality outsourcing services at the most reasonable cost.",
+    "Our rigid recruitment, screening and deployment process coupled by continued enhancement of our personnel and upgrade of equipment, ensure that deployed personnel are equipped with the right attitude, values, and dedication to their job.",
+    "With a paid-up capital of PhP 10 Million Pesos, our company is grounded on a foundation that our partners could rely to provide them with professional services all year round.",
+    "Our wealth of experience speaks for what we are and what we aim to achieve with our partner clients.",
+    "In URC we provide solutions! We don’t just develop clients, we nurture partnerships!",
+    "Your service requirements, our priority with integrity and reliability!",
   ],
   permit: "RO1-09-23-00021",
-  paidUpCapital: "PhP 10 Million",
+  doleOrder: "Department Order No. 174, Series of 2017",
+  paidUpCapital: "PhP 10 Million Pesos",
   mission:
     "Our Mission is to help our partners maximize their business investments by providing effective and efficient human resources services in support of their respective company operations.",
   vision:
