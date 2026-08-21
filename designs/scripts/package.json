@@ -1,0 +1,9 @@
+{
+  "name": "design-renderer",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Renders the HTML design concepts in ../fgdlaw and ../fortitude to full-page JPEG and PDF using headless Chrome.",
+  "dependencies": {
+    "puppeteer-core": "^25.8.0"
+  }
+}

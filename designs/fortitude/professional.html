@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fortitude Global Dimensions — Modern Professional Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#0E5F53;
+    --teal-2:#0F7C66;
+    --teal-light:#E4F2EC;
+    --amber:#E8A23A;
+    --ink:#132420;
+    --muted:#5C6E68;
+    --line:#DCE7E1;
+    --paper:#F7FAF8;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:'Manrope',sans-serif; background:var(--paper); color:var(--ink); -webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;}
+  .wrap{max-width:1200px; margin:0 auto; padding:0 40px;}
+  a{color:inherit; text-decoration:none;}
+
+  header.nav{background:#fff; border-bottom:1px solid var(--line);}
+  .nav .wrap{display:flex; align-items:center; justify-content:space-between; padding:22px 40px;}
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand .mark{width:42px; height:42px; border-radius:12px; background:var(--teal); display:flex; align-items:center; justify-content:center; position:relative;}
+  .brand .mark svg{width:24px; height:24px; color:#fff;}
+  .brand .name{font-family:'Fraunces',serif; font-weight:700; font-size:17px; line-height:1.15; color:var(--teal);}
+  .brand .name small{display:block; font-family:'Manrope',sans-serif; font-weight:600; font-size:10px; letter-spacing:.1em; color:var(--muted); text-transform:uppercase; margin-top:2px;}
+  nav.links{display:flex; gap:34px; font-size:14.5px; font-weight:600; color:#2c3b36;}
+  .cta-btn{background:var(--teal); color:#fff; padding:12px 26px; border-radius:8px; font-weight:700; font-size:14px;}
+
+  .hero{background:var(--teal-light); position:relative; overflow:hidden;}
+  .hero .wrap{padding:90px 40px 100px; display:grid; grid-template-columns:1.1fr .9fr; gap:60px; align-items:center; position:relative; z-index:2;}
+  .eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--teal); background:#fff; padding:8px 16px; border-radius:30px; margin-bottom:26px; border:1px solid var(--line);}
+  .hero h1{font-size:50px; line-height:1.14; font-weight:600; color:var(--ink); margin-bottom:22px;}
+  .hero h1 span{color:var(--teal);}
+  .hero p{font-size:16.5px; line-height:1.7; color:var(--muted); max-width:500px; margin-bottom:32px;}
+  .hero-actions{display:flex; gap:14px;}
+  .btn-amber{background:var(--amber); color:#2b1c05; font-weight:700; padding:14px 28px; border-radius:8px; font-size:14.5px;}
+  .btn-line{border:1.5px solid var(--teal); color:var(--teal); padding:14px 28px; border-radius:8px; font-weight:700; font-size:14.5px;}
+
+  .puzzle-visual{position:relative; height:400px;}
+  .piece{position:absolute; border-radius:18px; display:flex; align-items:center; justify-content:center; box-shadow:0 20px 45px -18px rgba(14,95,83,.35);}
+  .piece.p1{width:180px; height:180px; background:var(--teal); top:20px; left:60px; transform:rotate(-4deg);}
+  .piece.p2{width:150px; height:150px; background:var(--amber); top:60px; left:230px; transform:rotate(6deg);}
+  .piece.p3{width:140px; height:140px; background:#fff; border:1px solid var(--line); top:220px; left:40px; transform:rotate(3deg);}
+  .piece.p4{width:130px; height:130px; background:var(--teal-2); top:210px; left:220px; transform:rotate(-6deg);}
+  .piece svg{width:44px; height:44px; color:#fff;}
+  .piece.p3 svg{color:var(--teal);}
+  .piece .knob{position:absolute; width:34px; height:34px; border-radius:50%; background:inherit;}
+  .piece.p1 .knob{right:-14px; top:50%; transform:translateY(-50%);}
+  .piece.p3 .knob{left:-14px; top:50%; transform:translateY(-50%); background:#fff; border:1px solid var(--line);}
+
+  section{padding:90px 0;}
+  .kicker{font-size:12.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--teal); margin-bottom:14px;}
+  .sec-head{max-width:640px; margin:0 auto 56px; text-align:center;}
+  .sec-head h2{font-size:34px; font-weight:600; line-height:1.28;}
+  .sec-head p{color:var(--muted); font-size:15.5px; margin-top:14px; line-height:1.7;}
+
+  .logo-strip{background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:34px 0;}
+  .logo-strip .wrap{display:flex; justify-content:space-between; align-items:center; color:var(--muted); font-size:13px; font-weight:700; letter-spacing:.04em;}
+
+  .services-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+  .scard{background:#fff; border:1px solid var(--line); border-radius:16px; padding:30px 24px;}
+  .scard .icon{width:48px; height:48px; border-radius:12px; background:var(--teal-light); color:var(--teal); display:flex; align-items:center; justify-content:center; margin-bottom:20px;}
+  .scard h3{font-family:'Manrope',sans-serif; font-size:16px; font-weight:800; margin-bottom:10px;}
+  .scard p{font-size:13.5px; color:var(--muted); line-height:1.6;}
+
+  .process{background:#fff;}
+  .process-row{display:grid; grid-template-columns:repeat(4,1fr); gap:26px; position:relative;}
+  .pstep{text-align:center; position:relative;}
+  .pstep .n{width:52px; height:52px; border-radius:50%; background:var(--teal); color:#fff; font-family:'Fraunces',serif; font-weight:700; font-size:19px; display:flex; align-items:center; justify-content:center; margin:0 auto 20px;}
+  .pstep h4{font-size:15px; font-weight:800; margin-bottom:8px;}
+  .pstep p{font-size:13px; color:var(--muted); line-height:1.6;}
+
+  .stats{background:var(--teal); color:#fff;}
+  .stats .wrap{display:grid; grid-template-columns:repeat(4,1fr); text-align:center; padding:50px 40px;}
+  .stats .num{font-family:'Fraunces',serif; font-size:38px; font-weight:700; color:#F5D9A6;}
+  .stats .lab{font-size:12.5px; letter-spacing:.06em; text-transform:uppercase; color:#c9e6dd; margin-top:8px;}
+
+  .quote-sec{background:var(--teal-light);}
+  .quote-box{max-width:740px; margin:0 auto; text-align:center;}
+  .quote-box p{font-family:'Fraunces',serif; font-size:25px; line-height:1.5; color:var(--teal); font-weight:600;}
+  .quote-box .who{margin-top:24px; font-size:13.5px; font-weight:700;}
+  .quote-box .who span{display:block; font-weight:500; color:var(--muted); font-size:12.5px; margin-top:2px;}
+
+  .cta-band{background:linear-gradient(120deg,var(--teal),#0a4a41); color:#fff;}
+  .cta-band .wrap{display:flex; align-items:center; justify-content:space-between; padding:60px 40px;}
+  .cta-band h3{font-family:'Fraunces',serif; font-size:28px; font-weight:600; max-width:460px;}
+  .cta-band p{color:#c9e6dd; margin-top:10px; font-size:14.5px;}
+
+  .contact-grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:60px; align-items:start;}
+  .info-item{display:flex; gap:16px; margin-bottom:26px;}
+  .info-item .ic{width:44px; height:44px; border-radius:10px; background:var(--teal-light); color:var(--teal); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .info-item h4{font-size:14.5px; font-weight:800; margin-bottom:4px;}
+  .info-item p{font-size:13.5px; color:var(--muted); line-height:1.6;}
+  .form-card{background:#fff; border:1px solid var(--line); border-radius:16px; padding:36px; box-shadow:0 30px 60px -30px rgba(14,95,83,.2);}
+  .form-card label{font-size:12.5px; font-weight:800; color:var(--teal); display:block; margin-bottom:8px; text-transform:uppercase; letter-spacing:.03em;}
+  .form-card .field{border:1px solid var(--line); border-radius:10px; padding:14px 16px; font-size:14px; color:var(--muted); margin-bottom:18px; background:var(--paper);}
+  .form-card .field.area{height:96px;}
+
+  footer{background:#0A1F1B; color:#8fada3; padding:60px 0 30px;}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,.08);}
+  .foot-grid h5{color:#fff; font-size:13.5px; font-weight:800; margin-bottom:16px;}
+  .foot-grid p, .foot-grid li{font-size:13px; line-height:2; color:#8fada3; list-style:none;}
+  .foot-bottom{display:flex; justify-content:space-between; padding-top:26px; font-size:12.5px; color:#557a70;}
+</style>
+</head>
+<body>
+
+  <header class="nav"><div class="wrap">
+    <div class="brand">
+      <div class="mark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h6v6H7v3h3v7H4V4zm10 0h6v6h-3v3h3v7h-6V4z"/></svg></div>
+      <div class="name">Fortitude Global<small>Dimensions Inc.</small></div>
+    </div>
+    <nav class="links"><a>About</a><a>Services</a><a>Process</a><a>Insights</a><a>Contact</a></nav>
+    <a class="cta-btn">Talk to Us</a>
+  </div></header>
+
+  <section class="hero"><div class="wrap">
+    <div>
+      <div class="eyebrow">🧩 HR &amp; Business Consultancy</div>
+      <h1>It's all about finding<br>the <span>right pieces</span> for<br>your business.</h1>
+      <p>Fortitude Global Dimensions Inc. delivers end-to-end Human Resources and business consultancy solutions — helping partners achieve their goals through efficient, multifaceted organizational operations.</p>
+      <div class="hero-actions">
+        <a class="btn-amber">Get Started →</a>
+        <a class="btn-line">Explore Services</a>
+      </div>
+    </div>
+    <div class="puzzle-visual">
+      <div class="piece p1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.5 3.6-8 8-8s8 3.5 8 8"/></svg><div class="knob"></div></div>
+      <div class="piece p2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
+      <div class="piece p3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><div class="knob"></div></div>
+      <div class="piece p4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 12h6M12 9v6"/></svg></div>
+    </div>
+  </div></section>
+
+  <div class="logo-strip"><div class="wrap">
+    <span>TRUSTED BY TEAMS ACROSS</span><span>MANUFACTURING</span><span>BPO &amp; SHARED SERVICES</span><span>RETAIL</span><span>LOGISTICS</span><span>GOVERNMENT</span>
+  </div></div>
+
+  <section><div class="wrap">
+    <div class="sec-head">
+      <div class="kicker" style="text-align:center;">What We Do</div>
+      <h2>A full suite of HR &amp; business solutions</h2>
+      <p>We make things happen — through practical, results-driven consultancy tailored to your organization's structure and goals.</p>
+    </div>
+    <div class="services-grid">
+      <div class="scard"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="7" r="3"/><path d="M2 21c0-3.5 3-6 7-6s7 2.5 7 6"/><circle cx="17" cy="7" r="2.5"/><path d="M16 15c2.8.4 5 2.4 5 6"/></svg></div><h3>Recruitment &amp; Staffing</h3><p>End-to-end talent sourcing and placement aligned to your organizational needs.</p></div>
+      <div class="scard"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div><h3>Training &amp; Development</h3><p>Upskilling programs that build organizational capability and leadership pipelines.</p></div>
+      <div class="scard"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg></div><h3>Compliance &amp; Labor Advisory</h3><p>Regulatory guidance to keep your HR practices compliant and audit-ready.</p></div>
+      <div class="scard"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 3v18h18M7 14l4-4 3 3 5-6"/></svg></div><h3>Organizational Consultancy</h3><p>Structure, systems, and process design for efficient, scalable operations.</p></div>
+    </div>
+  </div></section>
+
+  <section class="process"><div class="wrap">
+    <div class="sec-head">
+      <div class="kicker" style="text-align:center;">Our Process</div>
+      <h2>Finding the right pieces, step by step</h2>
+    </div>
+    <div class="process-row">
+      <div class="pstep"><div class="n">01</div><h4>Discover</h4><p>We assess your current structure, goals, and pain points.</p></div>
+      <div class="pstep"><div class="n">02</div><h4>Design</h4><p>We craft a tailored HR &amp; consultancy roadmap.</p></div>
+      <div class="pstep"><div class="n">03</div><h4>Deploy</h4><p>Our team implements solutions alongside yours.</p></div>
+      <div class="pstep"><div class="n">04</div><h4>Deliver Results</h4><p>We track outcomes and refine for continuous impact.</p></div>
+    </div>
+  </div></section>
+
+  <section class="stats"><div class="wrap">
+    <div><div class="num">2014</div><div class="lab">Company Founded</div></div>
+    <div><div class="num">4</div><div class="lab">Core Service Pillars</div></div>
+    <div><div class="num">100+</div><div class="lab">Partner Organizations</div></div>
+    <div><div class="num">100%</div><div class="lab">Results-Driven Approach</div></div>
+  </div></section>
+
+  <section class="quote-sec"><div class="wrap"><div class="quote-box">
+    <p>"We make things happen — dedicated to delivering top-notch quality services and helping our partners achieve their goals through effective, efficient organizational operations."</p>
+    <div class="who">Fortitude Global Dimensions Inc.<span>Company Mission</span></div>
+  </div></div></section>
+
+  <section class="cta-band"><div class="wrap">
+    <div><h3>Ready to build a stronger organization?</h3><p>Let's find the right pieces for your team, together.</p></div>
+    <a class="btn-amber">Contact Us →</a>
+  </div></section>
+
+  <section><div class="wrap">
+    <div class="sec-head" style="margin-bottom:56px;">
+      <div class="kicker" style="text-align:center;">Contact Us</div>
+      <h2>Let's start the conversation</h2>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="info-item"><div class="ic">📍</div><div><h4>Office Address</h4><p>Unit 313, 3rd Floor, JARS Building, JP Laurel St, San Miguel, Manila 1005, Philippines</p></div></div>
+        <div class="info-item"><div class="ic">📞</div><div><h4>Phone</h4><p>742-43-50 / 986-2953</p></div></div>
+        <div class="info-item"><div class="ic">✉️</div><div><h4>Email</h4><p>contact@fortitudeglobal.com.ph</p></div></div>
+        <div class="info-item"><div class="ic">🕘</div><div><h4>Office Hours</h4><p>Monday – Friday, 9:00 AM – 6:00 PM</p></div></div>
+      </div>
+      <div class="form-card">
+        <label>Full Name</label><div class="field">Juan Dela Cruz</div>
+        <label>Email Address</label><div class="field">juan@company.com</div>
+        <label>Message</label><div class="field area">Tell us about your business needs...</div>
+        <a class="btn-amber" style="display:block; text-align:center;">Submit Inquiry</a>
+      </div>
+    </div>
+  </div></section>
+
+  <footer><div class="wrap">
+    <div class="foot-grid">
+      <div><h5>Fortitude Global Dimensions</h5><p style="max-width:280px;">HR management &amp; business consultancy — helping partners achieve their goals since 2014.</p></div>
+      <div><h5>Company</h5><ul><li>About Us</li><li>Careers</li><li>Partners</li></ul></div>
+      <div><h5>Services</h5><ul><li>Recruitment</li><li>Training</li><li>Compliance</li></ul></div>
+      <div><h5>Contact</h5><ul><li>contact@fortitudeglobal.com.ph</li><li>742-43-50</li><li>San Miguel, Manila</li></ul></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Fortitude Global Dimensions Inc.</span><span>UI/UX Concept — Modern Professional Direction</span></div>
+  </div></footer>
+
+</body>
+</html>

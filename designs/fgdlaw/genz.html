@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FGDLaw — Gen Z / Alpha Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0D0D14;
+    --bg-2:#14141F;
+    --card:#1B1B29;
+    --violet:#8B5CF6;
+    --cyan:#22D3EE;
+    --lime:#D4FF3D;
+    --pink:#FF5DA2;
+    --txt:#F5F4FA;
+    --muted:#9A98AE;
+    --line:#2A2A3B;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:'Sora',sans-serif; background:var(--bg); color:var(--txt); -webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.display{font-family:'Space Grotesk',sans-serif;}
+  .wrap{max-width:1200px; margin:0 auto; padding:0 40px;}
+  a{color:inherit; text-decoration:none;}
+  .grad-text{background:linear-gradient(90deg,var(--violet),var(--cyan)); -webkit-background-clip:text; background-clip:text; color:transparent;}
+
+  header.nav{padding:24px 0; position:relative;}
+  .nav .wrap{display:flex; align-items:center; justify-content:space-between;}
+  .brand{display:flex; align-items:center; gap:10px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:19px;}
+  .brand .mark{width:38px; height:38px; border-radius:11px; background:linear-gradient(135deg,var(--violet),var(--cyan)); display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:800;}
+  nav.links{display:flex; gap:30px; font-size:14px; font-weight:600; color:var(--muted); align-items:center;}
+  nav.links a.pill{background:var(--card); border:1px solid var(--line); padding:5px 14px; border-radius:20px; color:var(--txt); font-size:12.5px;}
+  .cta-pill{background:linear-gradient(90deg,var(--violet),var(--cyan)); color:#0D0D14; font-weight:700; padding:12px 24px; border-radius:30px; font-size:14px;}
+
+  .hero{position:relative; overflow:hidden; padding:70px 0 90px;}
+  .hero .glow1{position:absolute; top:-120px; right:-80px; width:420px; height:420px; background:radial-gradient(circle, rgba(139,92,246,.45), transparent 70%); filter:blur(10px);}
+  .hero .glow2{position:absolute; top:200px; left:-140px; width:420px; height:420px; background:radial-gradient(circle, rgba(34,211,238,.35), transparent 70%); filter:blur(10px);}
+  .hero .wrap{position:relative; z-index:2;}
+  .tagpill{display:inline-flex; align-items:center; gap:8px; background:var(--card); border:1px solid var(--line); padding:8px 16px; border-radius:30px; font-size:12.5px; font-weight:600; color:var(--lime); margin-bottom:28px;}
+  .hero h1{font-size:66px; line-height:1.04; font-weight:700; letter-spacing:-.01em; margin-bottom:24px;}
+  .hero p{font-size:17px; color:var(--muted); max-width:520px; line-height:1.65; margin-bottom:36px;}
+  .hero-actions{display:flex; gap:14px; margin-bottom:56px;}
+  .btn-neon{background:linear-gradient(90deg,var(--violet),var(--cyan)); color:#0D0D14; font-weight:700; padding:16px 30px; border-radius:14px; font-size:15px;}
+  .btn-ghost{border:1.5px solid var(--line); color:var(--txt); padding:16px 30px; border-radius:14px; font-size:15px; font-weight:600;}
+  .chip-row{display:flex; gap:12px; flex-wrap:wrap;}
+  .chip{background:var(--card); border:1px solid var(--line); padding:9px 16px; border-radius:12px; font-size:13px; color:var(--muted); display:flex; align-items:center; gap:8px;}
+  .chip b{color:var(--txt);}
+
+  .bento{display:grid; grid-template-columns:repeat(4,1fr); grid-template-rows:repeat(2,140px); gap:16px; margin-top:60px;}
+  .bento .b1{grid-column:1/3; grid-row:1/3; background:linear-gradient(155deg,#221b3d,#171325); border:1px solid var(--line); border-radius:22px; padding:26px; display:flex; flex-direction:column; justify-content:space-between;}
+  .bento .b2{grid-column:3/5; background:var(--card); border:1px solid var(--line); border-radius:22px; padding:22px; display:flex; align-items:center; gap:16px;}
+  .bento .b3{grid-column:3/4; background:linear-gradient(155deg,#0f2b2c,#122a33); border:1px solid var(--line); border-radius:22px; padding:22px;}
+  .bento .b4{grid-column:4/5; background:linear-gradient(155deg,#2b1330,#1c1027); border:1px solid var(--line); border-radius:22px; padding:22px;}
+  .bento .lbl{font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:8px;}
+  .bento .big{font-family:'Space Grotesk',sans-serif; font-size:30px; font-weight:700;}
+  .bento .icon-round{width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+
+  section.services{padding:90px 0;}
+  .sec-head{max-width:600px; margin-bottom:50px;}
+  .sec-head .kicker{color:var(--lime); font-weight:700; font-size:13px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:14px;}
+  .sec-head h2{font-size:38px; font-weight:700;}
+  .sec-head p{color:var(--muted); margin-top:14px; font-size:15px; line-height:1.65;}
+
+  .swipe-row{display:flex; gap:20px; overflow:hidden; padding-bottom:6px;}
+  .swipe-card{min-width:270px; background:var(--card); border:1px solid var(--line); border-radius:20px; padding:28px 24px; position:relative;}
+  .swipe-card .tag{position:absolute; top:20px; right:20px; background:rgba(212,255,61,.12); color:var(--lime); font-size:11px; font-weight:700; padding:5px 10px; border-radius:20px;}
+  .swipe-card .num{font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700; color:var(--violet); margin-bottom:18px;}
+  .swipe-card h3{font-size:17px; font-weight:700; margin-bottom:10px;}
+  .swipe-card p{font-size:13.5px; color:var(--muted); line-height:1.6;}
+  .swipe-dots{display:flex; gap:8px; justify-content:center; margin-top:26px;}
+  .swipe-dots span{width:8px; height:8px; border-radius:50%; background:var(--line);}
+  .swipe-dots span.on{background:var(--violet); width:22px; border-radius:5px;}
+
+  .team-strip{background:var(--bg-2); padding:90px 0;}
+  .team-cards{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+  .team-card{background:var(--card); border:1px solid var(--line); border-radius:20px; padding:22px; text-align:left;}
+  .team-card .avatar{width:100%; height:130px; border-radius:14px; background:linear-gradient(160deg,var(--violet),var(--cyan)); margin-bottom:16px; display:flex; align-items:center; justify-content:center; font-size:34px; font-weight:800; color:rgba(13,13,20,.85); font-family:'Space Grotesk',sans-serif;}
+  .team-card .name{font-weight:700; font-size:14.5px;}
+  .team-card .role{font-size:11.5px; color:var(--lime); font-weight:700; text-transform:uppercase; margin:6px 0 10px;}
+  .team-card .desc{font-size:12px; color:var(--muted); line-height:1.55;}
+
+  .cta-big{padding:100px 0; text-align:center; position:relative; overflow:hidden;}
+  .cta-big .glow{position:absolute; top:-60px; left:50%; transform:translateX(-50%); width:600px; height:300px; background:radial-gradient(circle, rgba(139,92,246,.4), transparent 70%); filter:blur(20px);}
+  .cta-big h2{font-size:48px; font-weight:700; max-width:640px; margin:0 auto 20px; position:relative; z-index:2;}
+  .cta-big p{color:var(--muted); margin-bottom:36px; position:relative; z-index:2;}
+  .cta-big .btn-neon{position:relative; z-index:2; display:inline-block;}
+
+  .contact-band{padding:0 0 90px;}
+  .contact-card{background:linear-gradient(140deg,#1b1b29,#14141f); border:1px solid var(--line); border-radius:28px; padding:50px; display:grid; grid-template-columns:1fr 1fr; gap:50px;}
+  .contact-card h3{font-size:26px; font-weight:700; margin-bottom:16px;}
+  .contact-list{display:flex; flex-direction:column; gap:16px; margin-top:24px;}
+  .contact-list .row{display:flex; gap:12px; align-items:center; font-size:14px; color:var(--muted);}
+  .contact-list .row .ic{width:34px; height:34px; border-radius:9px; background:rgba(255,255,255,.06); display:flex; align-items:center; justify-content:center;}
+  .contact-form input, .contact-form textarea{width:100%; background:#0D0D14; border:1px solid var(--line); border-radius:12px; padding:14px 16px; color:var(--txt); font-family:'Sora',sans-serif; font-size:14px; margin-bottom:14px;}
+  .field-lbl{font-size:12px; color:var(--muted); margin-bottom:6px; display:block; font-weight:600;}
+
+  footer{border-top:1px solid var(--line); padding:40px 0;}
+  .foot-row{display:flex; justify-content:space-between; align-items:center; font-size:13px; color:var(--muted);}
+  .foot-social{display:flex; gap:10px;}
+  .foot-social span{width:34px; height:34px; border-radius:50%; background:var(--card); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; font-size:13px;}
+</style>
+</head>
+<body>
+
+  <header class="nav"><div class="wrap">
+    <div class="brand"><div class="mark">FG</div>FGDLaw</div>
+    <nav class="links">
+      <a>Services</a><a>Team</a><a>FAQ</a><a class="pill">💬 Chat with us</a>
+    </nav>
+    <a class="cta-pill">Get Legal Help →</a>
+  </div></header>
+
+  <section class="hero">
+    <div class="glow1"></div><div class="glow2"></div>
+    <div class="wrap">
+      <div class="tagpill">✨ Legal help that actually gets you</div>
+      <h1>Know your<br>rights. <span class="grad-text">Win<br>your case.</span></h1>
+      <p>Real lawyers, real talk. FGDLaw has been helping people navigate the legal system since 2002 — now with zero boring jargon and zero waiting rooms.</p>
+      <div class="hero-actions">
+        <a class="btn-neon">Book a Free Chat 🚀</a>
+        <a class="btn-ghost">See how it works</a>
+      </div>
+      <div class="chip-row">
+        <div class="chip">⭐ <b>23 yrs</b> in the game</div>
+        <div class="chip">👥 <b>500+</b> cases handled</div>
+        <div class="chip">🔒 <b>Data privacy</b> certified</div>
+      </div>
+
+      <div class="bento">
+        <div class="b1">
+          <div><div class="lbl">Why people trust us</div><div class="big">Real lawyers.<br>Real results.<br>No cap.</div></div>
+          <div style="font-size:13px; color:var(--muted);">Est. 2002 · Manila, PH 🇵🇭</div>
+        </div>
+        <div class="b2"><div class="icon-round">⚖️</div><div><div class="lbl">Practice areas</div><div style="font-weight:700; font-size:15px;">Labor · Privacy · Family Law</div></div></div>
+        <div class="b3"><div class="lbl">Response time</div><div class="big" style="color:var(--cyan);">&lt;24h</div></div>
+        <div class="b4"><div class="lbl">Client rating</div><div class="big" style="color:var(--lime);">4.9★</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services"><div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">what we handle</div>
+      <h2>Legal services, <span class="grad-text">simplified</span></h2>
+      <p>Swipe through what we do best — no legalese, just straight answers.</p>
+    </div>
+    <div class="swipe-row">
+      <div class="swipe-card"><span class="tag">Popular</span><div class="num">01</div><h3>Labor &amp; HR Law</h3><p>Got a workplace issue? We fight for fair treatment, contracts, and compliance.</p></div>
+      <div class="swipe-card"><div class="num">02</div><h3>Data Privacy</h3><p>Certified DPO support for when your data (or your biz) needs protecting.</p></div>
+      <div class="swipe-card"><div class="num">03</div><h3>Family Matters</h3><p>Adoption, guardianship &amp; more — handled with care, not just paperwork.</p></div>
+      <div class="swipe-card"><div class="num">04</div><h3>Litigation</h3><p>Civil, criminal, and everything in between. We show up and show out.</p></div>
+    </div>
+    <div class="swipe-dots"><span class="on"></span><span></span><span></span><span></span></div>
+  </div></section>
+
+  <section class="team-strip"><div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">the squad</div>
+      <h2>Meet the <span class="grad-text">team</span></h2>
+      <p>Not your typical stiff-suit lawyers. Just people who actually care.</p>
+    </div>
+    <div class="team-cards">
+      <div class="team-card"><div class="avatar">FD</div><div class="name">Atty. Frederick Dedace</div><div class="role">Founder / GC</div><div class="desc">PhD holder, 23+ yrs in practice. The OG.</div></div>
+      <div class="team-card"><div class="avatar">CD</div><div class="name">Atty. Carl Dedace</div><div class="role">Managing Counsel</div><div class="desc">HR &amp; labor law specialist, also teaches law school.</div></div>
+      <div class="team-card"><div class="avatar">JN</div><div class="name">Atty. Joan Napay</div><div class="role">Affiliated Counsel</div><div class="desc">Family law + special proceedings expert.</div></div>
+      <div class="team-card"><div class="avatar">MR</div><div class="name">Atty. Mary Rose Reyes</div><div class="role">Junior Counsel</div><div class="desc">Litigation + certified privacy officer.</div></div>
+    </div>
+  </div></section>
+
+  <section class="cta-big">
+    <div class="glow"></div>
+    <h2>Ready to get the legal <span class="grad-text">glow up</span> you deserve?</h2>
+    <p>Book a free 15-min chat. No pressure, no jargon, just answers.</p>
+    <a class="btn-neon">Let's Talk 💬</a>
+  </section>
+
+  <section class="contact-band"><div class="wrap">
+    <div class="contact-card">
+      <div>
+        <h3>Slide into our <span class="grad-text">DMs</span> (or just email us)</h3>
+        <p style="color:var(--muted); font-size:14px; line-height:1.6;">Unit 316, JARS Building, JP Laurel St, San Miguel, Manila 🇵🇭</p>
+        <div class="contact-list">
+          <div class="row"><div class="ic">📞</div>(632) 727-5011-2</div>
+          <div class="row"><div class="ic">✉️</div>info@fgdlaw.net</div>
+          <div class="row"><div class="ic">⏰</div>Mon–Fri, 9AM–6PM</div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <span class="field-lbl">Your name</span><input placeholder="what's your name?">
+        <span class="field-lbl">Email</span><input placeholder="you@email.com">
+        <span class="field-lbl">Tell us what's up</span><textarea rows="3" placeholder="spill the details..."></textarea>
+        <a class="btn-neon" style="display:block; text-align:center; margin-top:6px;">Send it 🚀</a>
+      </div>
+    </div>
+  </div></section>
+
+  <footer><div class="wrap foot-row">
+    <span>© 2026 FGDLaw — legal help, no cap.</span>
+    <div class="foot-social"><span>𝕏</span><span>IG</span><span>in</span></div>
+  </div></footer>
+
+</body>
+</html>
