@@ -7,124 +7,156 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#160E2E;
-    --bg-2:#1E1440;
-    --card:#241A4D;
-    --coral:#FF6B6B;
-    --sun:#FFD93D;
-    --mint:#5EF2B0;
-    --purple:#A78BFA;
-    --txt:#F7F5FF;
-    --muted:#B3A9D6;
-    --line:#352a5e;
+    --brand:#101f78;
+    --brand-2:#1b2c95;
+    --bg:#fcfcfc;
+    --card:#ffffff;
+    --coral:#ffdcd4;
+    --coral-ink:#c14a36;
+    --sun:#fff1c2;
+    --sun-ink:#a9770c;
+    --mint:#d9f5e6;
+    --mint-ink:#1c8a5b;
+    --sky:#e3ebff;
+    --ink:#12141c;
+    --muted:#5b5f72;
+    --line:#e9ebf3;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  body{font-family:'Sora',sans-serif; background:var(--bg); color:var(--txt); -webkit-font-smoothing:antialiased;}
+  body{font-family:'Sora',sans-serif; background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased;}
   h1,h2,h3,.display{font-family:'Space Grotesk',sans-serif;}
   .wrap{max-width:1200px; margin:0 auto; padding:0 40px;}
   a{color:inherit; text-decoration:none;}
-  .grad-text{background:linear-gradient(90deg,var(--coral),var(--sun)); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .grad-text{background:linear-gradient(90deg,var(--brand),#3d54d6); -webkit-background-clip:text; background-clip:text; color:transparent;}
 
-  header.nav{padding:24px 0;}
+  header.nav{padding:26px 0; background:var(--bg);}
   .nav .wrap{display:flex; align-items:center; justify-content:space-between;}
   .brand{display:flex; align-items:center; gap:10px; font-weight:700; font-size:18px;}
-  .brand .mark{width:38px; height:38px; border-radius:11px; background:linear-gradient(135deg,var(--coral),var(--sun)); display:flex; align-items:center; justify-content:center; font-size:17px;}
+  .brand .mark{width:40px; height:40px; border-radius:12px; background:var(--brand); display:flex; align-items:center; justify-content:center; font-size:18px;}
   nav.links{display:flex; gap:28px; font-size:14px; font-weight:600; color:var(--muted); align-items:center;}
-  nav.links a.pill{background:var(--card); border:1px solid var(--line); padding:5px 14px; border-radius:20px; color:var(--txt); font-size:12.5px;}
-  .cta-pill{background:linear-gradient(90deg,var(--coral),var(--sun)); color:#1c1030; font-weight:800; padding:12px 24px; border-radius:30px; font-size:14px;}
+  nav.links a.pill{background:var(--card); border:1px solid var(--line); padding:6px 15px; border-radius:20px; color:var(--ink); font-size:12.5px;}
+  .cta-pill{background:var(--brand); color:#fff; font-weight:800; padding:12px 24px; border-radius:30px; font-size:14px;}
 
-  .hero{position:relative; overflow:hidden; padding:64px 0 80px;}
-  .hero .glow1{position:absolute; top:-100px; right:-100px; width:440px; height:440px; background:radial-gradient(circle, rgba(255,107,107,.4), transparent 70%); filter:blur(10px);}
-  .hero .glow2{position:absolute; top:260px; left:-160px; width:420px; height:420px; background:radial-gradient(circle, rgba(94,242,176,.3), transparent 70%); filter:blur(10px);}
-  .hero .wrap{position:relative; z-index:2; display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:center;}
-  .tagpill{display:inline-flex; align-items:center; gap:8px; background:var(--card); border:1px solid var(--line); padding:8px 16px; border-radius:30px; font-size:12.5px; font-weight:700; color:var(--mint); margin-bottom:26px;}
-  .hero h1{font-size:56px; line-height:1.06; font-weight:700; letter-spacing:-.01em; margin-bottom:22px;}
-  .hero p{font-size:16.5px; color:var(--muted); line-height:1.65; margin-bottom:32px;}
+  .hero{position:relative; overflow:hidden; padding:50px 0 80px;}
+  .hero .wrap{position:relative; z-index:2; display:grid; grid-template-columns:1.05fr .95fr; gap:40px; align-items:center;}
+  .tagpill{display:inline-flex; align-items:center; gap:8px; background:var(--sky); color:var(--brand); padding:8px 16px; border-radius:30px; font-size:12.5px; font-weight:700; margin-bottom:24px;}
+  .hero h1{font-size:52px; line-height:1.08; font-weight:700; letter-spacing:-.01em; margin-bottom:20px; color:var(--ink);}
+  .hero p{font-size:16.5px; color:var(--muted); line-height:1.65; margin-bottom:30px; max-width:480px;}
   .hero-actions{display:flex; gap:14px; flex-wrap:wrap;}
-  .btn-neon{background:linear-gradient(90deg,var(--coral),var(--sun)); color:#1c1030; font-weight:800; padding:16px 28px; border-radius:14px; font-size:14.5px;}
-  .btn-ghost{border:1.5px solid var(--line); color:var(--txt); padding:16px 28px; border-radius:14px; font-size:14.5px; font-weight:700;}
+  .btn-neon{background:var(--brand); color:#fff; font-weight:800; padding:16px 28px; border-radius:14px; font-size:14.5px;}
+  .btn-ghost{border:1.5px solid var(--line); background:var(--card); color:var(--ink); padding:16px 28px; border-radius:14px; font-size:14.5px; font-weight:700;}
 
-  .puzzle-stickers{position:relative; height:380px;}
-  .sticker{position:absolute; border-radius:26px; display:flex; flex-direction:column; align-items:center; justify-content:center; font-weight:800; text-align:center; box-shadow:0 20px 50px -18px rgba(0,0,0,.5);}
-  .sticker.s1{width:170px; height:170px; background:linear-gradient(155deg,var(--coral),#ff9b6b); top:0; left:40px; transform:rotate(-6deg); color:#2a0f0f;}
-  .sticker.s2{width:150px; height:150px; background:linear-gradient(155deg,var(--sun),#ffe98a); top:40px; left:230px; transform:rotate(8deg); color:#3a2c00;}
-  .sticker.s3{width:140px; height:140px; background:linear-gradient(155deg,var(--mint),#9df7d3); top:210px; left:20px; transform:rotate(5deg); color:#0c3a26;}
-  .sticker.s4{width:130px; height:130px; background:linear-gradient(155deg,var(--purple),#cbb8ff); top:200px; left:220px; transform:rotate(-7deg); color:#2a1a52;}
-  .sticker span.emoji{font-size:34px; margin-bottom:6px;}
-  .sticker span.lbl{font-size:12px;}
+  .bento{position:relative; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto auto; gap:16px; height:400px;}
+  .bcell{border-radius:24px; padding:20px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 16px 34px -18px rgba(16,31,120,.16);}
+  .bcell.big{grid-row:span 2; background:var(--brand); color:#fff;}
+  .bcell.photo{overflow:hidden; padding:0; position:relative;}
+  .bcell.photo img{width:100%; height:100%; object-fit:cover;}
+  .bcell.photo .tag{position:absolute; bottom:14px; left:14px; background:rgba(255,255,255,.94); color:var(--ink); font-size:12px; font-weight:700; padding:6px 12px; border-radius:20px;}
+  .bcell.sun{background:var(--sun); color:var(--sun-ink);}
+  .bcell.mint{background:var(--mint); color:var(--mint-ink);}
+  .bcell .emoji{font-size:30px;}
+  .bcell h4{font-size:15px; font-weight:700; margin-top:10px;}
+  .bcell.big h4{font-size:19px; line-height:1.3;}
+  .bcell.big p{font-size:12.5px; opacity:.85; margin-top:6px; line-height:1.5;}
 
-  section.services{padding:80px 0;}
-  .sec-head{max-width:600px; margin-bottom:46px;}
-  .sec-head .kicker{color:var(--mint); font-weight:700; font-size:13px; letter-spacing:.08em; text-transform:uppercase; margin-bottom:14px;}
+  section.services{padding:76px 0;}
+  .sec-head{max-width:600px; margin-bottom:44px;}
+  .sec-head .kicker{color:var(--brand); font-weight:800; font-size:13px; letter-spacing:.04em; text-transform:uppercase; margin-bottom:14px;}
   .sec-head h2{font-size:36px; font-weight:700;}
   .sec-head p{color:var(--muted); margin-top:14px; font-size:15px; line-height:1.65;}
 
-  .service-cards{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
-  .scard{background:var(--card); border:1px solid var(--line); border-radius:20px; padding:26px 22px; position:relative;}
-  .scard .badge{position:absolute; top:18px; right:18px; font-size:22px;}
-  .scard h3{font-size:16px; font-weight:700; margin:14px 0 10px;}
-  .scard p{font-size:12.5px; color:var(--muted); line-height:1.6;}
-  .scard .n{font-family:'Space Grotesk',sans-serif; font-size:28px; font-weight:700; color:var(--coral);}
+  .service-cards{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  .scard{background:var(--card); border:1px solid var(--line); border-radius:20px; padding:24px 20px; position:relative;}
+  .scard .badge{position:absolute; top:18px; right:18px; font-size:20px;}
+  .scard h3{font-size:15px; font-weight:700; margin:14px 0 8px;}
+  .scard p{font-size:12px; color:var(--muted); line-height:1.55;}
+  .scard .n{font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:700; color:var(--brand); opacity:.35;}
+  .scard.tint-coral{background:var(--coral);}
+  .scard.tint-sun{background:var(--sun);}
+  .scard.tint-mint{background:var(--mint);}
+  .scard.tint-sky{background:var(--sky);}
+  .scard.tint-coral .n, .scard.tint-sun .n, .scard.tint-mint .n, .scard.tint-sky .n{opacity:.4; color:var(--brand);}
 
-  .timeline-strip{background:var(--bg-2); padding:80px 0;}
+  .timeline-strip{background:var(--sky); padding:76px 0;}
   .tl-row{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
   .tl-card{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px; text-align:center;}
-  .tl-card .em{font-size:30px; margin-bottom:12px;}
+  .tl-card .em{font-size:28px; margin-bottom:12px;}
   .tl-card h4{font-size:14.5px; font-weight:700; margin-bottom:8px;}
   .tl-card p{font-size:12px; color:var(--muted); line-height:1.55;}
 
   .stat-band{padding:70px 0;}
   .stat-row{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; text-align:center;}
-  .stat-card{background:linear-gradient(155deg,var(--card),#1a1338); border:1px solid var(--line); border-radius:20px; padding:30px 16px;}
-  .stat-card .big{font-family:'Space Grotesk',sans-serif; font-size:34px; font-weight:700;}
-  .stat-card .lab{font-size:12px; color:var(--muted); margin-top:8px; text-transform:uppercase; letter-spacing:.05em;}
+  .stat-card{border:1px solid var(--line); border-radius:20px; padding:28px 16px;}
+  .stat-card.c1{background:var(--coral);}
+  .stat-card.c2{background:var(--sun);}
+  .stat-card.c3{background:var(--mint);}
+  .stat-card.c4{background:var(--sky);}
+  .stat-card .big{font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:700; color:var(--brand);}
+  .stat-card .lab{font-size:11.5px; color:var(--ink); opacity:.65; margin-top:8px; text-transform:uppercase; letter-spacing:.05em; font-weight:600;}
 
-  .cta-big{padding:90px 0; text-align:center; position:relative; overflow:hidden;}
-  .cta-big .glow{position:absolute; top:-60px; left:50%; transform:translateX(-50%); width:600px; height:300px; background:radial-gradient(circle, rgba(255,107,107,.35), transparent 70%); filter:blur(20px);}
-  .cta-big h2{font-size:44px; font-weight:700; max-width:620px; margin:0 auto 20px; position:relative; z-index:2;}
-  .cta-big p{color:var(--muted); margin-bottom:32px; position:relative; z-index:2;}
+  .quote-band{padding:20px 0 76px;}
+  .quote-card{background:var(--brand); border-radius:28px; padding:48px; display:grid; grid-template-columns:auto 1fr; gap:28px; align-items:center; color:#fff;}
+  .quote-card img{width:76px; height:76px; border-radius:50%; object-fit:cover; border:3px solid rgba(255,255,255,.5); flex-shrink:0;}
+  .quote-card p.line{font-family:'Space Grotesk',sans-serif; font-size:20px; font-weight:600; line-height:1.4;}
+  .quote-card .who{margin-top:10px; font-size:13px; opacity:.75; font-weight:600;}
+
+  .cta-big{padding:20px 0 90px; text-align:center;}
+  .cta-card{background:var(--sun); border-radius:32px; padding:70px 40px; position:relative; overflow:hidden;}
+  .cta-big h2{font-size:42px; font-weight:700; max-width:640px; margin:0 auto 18px; position:relative; z-index:2; color:var(--ink);}
+  .cta-big p{color:var(--muted); margin-bottom:30px; position:relative; z-index:2;}
   .cta-big .btn-neon{position:relative; z-index:2; display:inline-block;}
 
   .contact-band{padding:0 0 80px;}
-  .contact-card{background:linear-gradient(145deg,var(--card),#1a1338); border:1px solid var(--line); border-radius:28px; padding:48px; display:grid; grid-template-columns:1fr 1fr; gap:50px;}
+  .contact-card{background:var(--card); border:1px solid var(--line); border-radius:28px; padding:48px; display:grid; grid-template-columns:1fr 1fr; gap:50px;}
   .contact-card h3{font-size:25px; font-weight:700; margin-bottom:14px;}
   .contact-list{display:flex; flex-direction:column; gap:14px; margin-top:22px;}
   .contact-list .row{display:flex; gap:12px; align-items:center; font-size:13.5px; color:var(--muted);}
-  .contact-list .row .ic{width:32px; height:32px; border-radius:9px; background:rgba(255,255,255,.06); display:flex; align-items:center; justify-content:center;}
-  .contact-form input, .contact-form textarea{width:100%; background:#160E2E; border:1px solid var(--line); border-radius:12px; padding:14px 16px; color:var(--txt); font-family:'Sora',sans-serif; font-size:14px; margin-bottom:14px;}
+  .contact-list .row .ic{width:32px; height:32px; border-radius:9px; background:var(--sky); display:flex; align-items:center; justify-content:center;}
+  .contact-form input, .contact-form textarea{width:100%; background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:14px 16px; color:var(--ink); font-family:'Sora',sans-serif; font-size:14px; margin-bottom:14px;}
   .field-lbl{font-size:12px; color:var(--muted); margin-bottom:6px; display:block; font-weight:600;}
 
-  footer{border-top:1px solid var(--line); padding:36px 0;}
-  .foot-row{display:flex; justify-content:space-between; align-items:center; font-size:13px; color:var(--muted);}
+  footer{background:var(--brand); padding:36px 0; color:#c7cdec;}
+  .foot-row{display:flex; justify-content:space-between; align-items:center; font-size:13px; color:#c7cdec;}
   .foot-social{display:flex; gap:10px;}
-  .foot-social span{width:34px; height:34px; border-radius:50%; background:var(--card); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; font-size:13px;}
+  .foot-social span{width:34px; height:34px; border-radius:50%; background:rgba(255,255,255,.12); display:flex; align-items:center; justify-content:center; font-size:13px; color:#fff;}
 </style>
 </head>
 <body>
 
   <header class="nav"><div class="wrap">
-    <div class="brand"><div class="mark">🧩</div>Fortitude</div>
+    <div class="brand"><div class="mark">🧩</div>Fortitude<span style="font-size:11px; font-weight:700; color:var(--brand); margin-left:6px; align-self:flex-end; padding-bottom:2px;">Your Strategic Partner!</span></div>
     <nav class="links"><a>Services</a><a>Process</a><a>FAQ</a><a class="pill">💬 Chat</a></nav>
     <a class="cta-pill">Work With Us →</a>
   </div></header>
 
   <section class="hero">
-    <div class="glow1"></div><div class="glow2"></div>
     <div class="wrap">
       <div>
         <div class="tagpill">🧩 building teams that click</div>
         <h1>We find the <span class="grad-text">right pieces</span> for your dream team.</h1>
-        <p>HR &amp; consultancy that actually gets your business — recruitment, training, compliance, and vibes, all in one place. No corporate stiffness, just results.</p>
+        <p>Fortitude Global Dimensions Inc. — HR &amp; consultancy that actually gets your business. Recruitment, training, compliance, and vibes, all in one place. Your strategic partner, no corporate stiffness required.</p>
         <div class="hero-actions">
           <a class="btn-neon">Let's Build Together 🚀</a>
           <a class="btn-ghost">See our services</a>
         </div>
       </div>
-      <div class="puzzle-stickers">
-        <div class="sticker s1"><span class="emoji">🧠</span><span class="lbl">Recruitment</span></div>
-        <div class="sticker s2"><span class="emoji">📈</span><span class="lbl">Training</span></div>
-        <div class="sticker s3"><span class="emoji">✅</span><span class="lbl">Compliance</span></div>
-        <div class="sticker s4"><span class="emoji">⚙️</span><span class="lbl">Ops</span></div>
+      <div class="bento">
+        <div class="bcell big">
+          <span class="emoji">🧠</span>
+          <div><h4>Recruitment that hits different</h4><p>We find your dream hires — fast, no ghosting.</p></div>
+        </div>
+        <div class="bcell photo">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=420&q=80&auto=format&fit=crop" alt="Team celebrating a win together with a high five">
+          <span class="tag">real wins 🙌</span>
+        </div>
+        <div class="bcell sun">
+          <span class="emoji">📈</span>
+          <h4>Training &amp; coaching</h4>
+        </div>
+        <div class="bcell mint">
+          <span class="emoji">✅</span>
+          <h4>Compliance, sorted</h4>
+        </div>
       </div>
     </div>
   </section>
@@ -133,13 +165,17 @@
     <div class="sec-head">
       <div class="kicker">what we bring to the table</div>
       <h2>HR solutions that <span class="grad-text">hit different</span></h2>
-      <p>Four core pieces, one solid team-building strategy.</p>
+      <p>Eight solid pieces, one strategic partnership — built for teams who want results without the stiff suit energy.</p>
     </div>
     <div class="service-cards">
-      <div class="scard"><div class="n">01</div><span class="badge">🧠</span><h3>Recruitment &amp; Staffing</h3><p>We find your dream hires, fast — no ghosting, no fluff.</p></div>
-      <div class="scard"><div class="n">02</div><span class="badge">📈</span><h3>Training &amp; Development</h3><p>Level up your team's skills with programs that actually stick.</p></div>
-      <div class="scard"><div class="n">03</div><span class="badge">✅</span><h3>Compliance Advisory</h3><p>Stay audit-ready without the stress or the legal-speak.</p></div>
-      <div class="scard"><div class="n">04</div><span class="badge">⚙️</span><h3>Org Consultancy</h3><p>We help structure your biz so it actually runs smooth.</p></div>
+      <div class="scard tint-sky"><div class="n">01</div><span class="badge">🧠</span><h3>Recruitment &amp; Selection</h3><p>We find your dream hires, fast — no ghosting, no fluff.</p></div>
+      <div class="scard"><div class="n">02</div><span class="badge">🎓</span><h3>Trainings, Seminars &amp; Coaching</h3><p>Level up your team's skills with programs that actually stick.</p></div>
+      <div class="scard tint-coral"><div class="n">03</div><span class="badge">💼</span><h3>Strategic HR &amp; Consulting</h3><p>Pay, perks, and people strategy — handled with care.</p></div>
+      <div class="scard"><div class="n">04</div><span class="badge">⚙️</span><h3>Organizational Development</h3><p>We help structure your biz so it actually runs smooth.</p></div>
+      <div class="scard"><div class="n">05</div><span class="badge">✅</span><h3>Compliance &amp; Labor Advisory</h3><p>Stay audit-ready without the stress or the legal-speak.</p></div>
+      <div class="scard tint-mint"><div class="n">06</div><span class="badge">🗂️</span><h3>Corporate Support Services</h3><p>Back-office &amp; admin support so you can focus on the big stuff.</p></div>
+      <div class="scard tint-sun"><div class="n">07</div><span class="badge">📊</span><h3>Business Solutions &amp; Management</h3><p>Day-to-day management support that just works.</p></div>
+      <div class="scard"><div class="n">08</div><span class="badge">🌏</span><h3>Start-Up &amp; Foreign Business Help</h3><p>Launching in PH? We've got your back, from day one.</p></div>
     </div>
   </div></section>
 
@@ -159,19 +195,30 @@
 
   <section class="stat-band"><div class="wrap">
     <div class="stat-row">
-      <div class="stat-card"><div class="big" style="color:var(--coral);">2014</div><div class="lab">Founded</div></div>
-      <div class="stat-card"><div class="big" style="color:var(--sun);">100+</div><div class="lab">Partner Orgs</div></div>
-      <div class="stat-card"><div class="big" style="color:var(--mint);">4</div><div class="lab">Core Pillars</div></div>
-      <div class="stat-card"><div class="big" style="color:var(--purple);">100%</div><div class="lab">Results Driven</div></div>
+      <div class="stat-card c1"><div class="big">2013</div><div class="lab">Incorporated</div></div>
+      <div class="stat-card c2"><div class="big">100+</div><div class="lab">Partner Orgs</div></div>
+      <div class="stat-card c3"><div class="big">8</div><div class="lab">Core Pillars</div></div>
+      <div class="stat-card c4"><div class="big">100%</div><div class="lab">Results Driven</div></div>
     </div>
   </div></section>
 
-  <section class="cta-big">
-    <div class="glow"></div>
-    <h2>Ready to find the <span class="grad-text">right pieces</span> for your team?</h2>
-    <p>Let's chat — no pressure, just possibilities.</p>
-    <a class="btn-neon">Book a Free Consult 💬</a>
-  </section>
+  <section class="quote-band"><div class="wrap">
+    <div class="quote-card">
+      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=200&q=80&auto=format&fit=crop" alt="Mentor coaching a colleague in an office setting">
+      <div>
+        <p class="line">"We make things happen — real results, real partnership, zero fluff."</p>
+        <div class="who">Fortitude Global Dimensions Inc. · Company Mission</div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="cta-big"><div class="wrap">
+    <div class="cta-card">
+      <h2>Ready to find the <span style="color:var(--brand);">right pieces</span> for your team?</h2>
+      <p>Let's chat — no pressure, just possibilities.</p>
+      <a class="btn-neon">Book a Free Consult 💬</a>
+    </div>
+  </div></section>
 
   <section class="contact-band"><div class="wrap">
     <div class="contact-card">
@@ -194,7 +241,7 @@
   </div></section>
 
   <footer><div class="wrap foot-row">
-    <span>© 2026 Fortitude Global Dimensions Inc. — pieces that fit.</span>
+    <span>© 2026 Fortitude Global Dimensions Inc. — your strategic partner, pieces that fit.</span>
     <div class="foot-social"><span>𝕏</span><span>IG</span><span>in</span></div>
   </div></footer>
 
