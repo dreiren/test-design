@@ -188,6 +188,96 @@
   .foot-row{display:flex; justify-content:space-between; align-items:center; font-size:13px; color:#c6cbea; flex-wrap:wrap; gap:10px;}
   .foot-social{display:flex; gap:10px;}
   .foot-social span{width:34px; height:34px; border-radius:50%; background:rgba(255,255,255,.12); display:flex; align-items:center; justify-content:center; font-size:13px; color:#fff;}
+
+  /* ===== Responsive ===== */
+  @media (max-width: 1024px){
+    .wrap{padding:0 28px;}
+    nav.links{display:none;}
+    .hero-center{padding:40px 0 0;}
+    .hero-center h1{font-size:38px;}
+    .hero-center p{font-size:15px;}
+    .photo-band{height:280px; margin-top:32px;}
+    .stat-hero{padding:48px 0;}
+    .stat-hero .wrap{grid-template-columns:1fr; gap:20px;}
+    .stat-hero-main{padding:36px 32px;}
+    .stat-hero-main .num{font-size:66px;}
+    section.svc{padding:16px 0 56px;}
+    .sec-head h2{font-size:30px;}
+    .reel-viewport{overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:8px;}
+    .mag-wrap{padding:56px 0;}
+    .magazine{grid-template-columns:repeat(2,1fr);}
+    .mag-head{grid-column:1/3;}
+    .mag-story{grid-column:1/3; grid-row:auto; padding:32px 28px;}
+    .mag-mission{grid-column:1/2; grid-row:auto;}
+    .mag-vision{grid-column:2/3; grid-row:auto;}
+    .chat-wrap{padding:56px 0;}
+    .highlights{padding:0 0 56px;}
+    .hl-row{gap:26px;}
+    .cta-banner{padding:48px 0;}
+    .cta-banner h2{font-size:30px;}
+    .contact-center{padding:56px 0;}
+  }
+
+  @media (max-width: 600px){
+    .wrap{padding:0 20px;}
+    header.nav{padding:20px 0;}
+    .brand{font-size:16px;}
+    .brand .mark{width:34px; height:34px; font-size:15px;}
+    .cta-pill{padding:9px 16px; font-size:12.5px;}
+    .hero-center{padding:28px 0 0;}
+    .tagpill{font-size:11px; padding:7px 13px;}
+    .hero-center h1{font-size:27px; line-height:1.2;}
+    .hero-center p{font-size:14px;}
+    .hero-actions{flex-direction:column; width:100%;}
+    .hero-actions a{text-align:center;}
+    .chip-row{gap:8px;}
+    .chip{font-size:11.5px; padding:7px 11px;}
+    .photo-band{height:190px; margin-top:24px;}
+    .photo-band .cap{font-size:11px; padding:8px 14px; bottom:14px; max-width:88%; white-space:normal; text-align:center;}
+    .stat-hero{padding:36px 0;}
+    .stat-hero-main{padding:28px 22px; border-radius:22px;}
+    .stat-hero-main .num{font-size:52px;}
+    .stat-hero-main .lab{font-size:14px;}
+    .stat-side{gap:10px;}
+    .stat-mini{padding:14px 16px; border-radius:14px;}
+    .stat-mini .num{font-size:22px; min-width:64px;}
+    section.svc{padding:10px 0 44px;}
+    .sec-head{margin-bottom:24px;}
+    .sec-head h2{font-size:24px;}
+    .svc-tabs{gap:8px; margin-bottom:26px;}
+    .svc-tab{padding:8px 14px; font-size:11.5px;}
+    .reel-card{width:190px;}
+    .reel-card.wide{flex-direction:column; align-items:flex-start; text-align:left;}
+    .mag-wrap{padding:40px 0;}
+    .magazine{grid-template-columns:repeat(2,1fr); gap:12px;}
+    .mag-head{grid-column:1/3; margin-bottom:10px;}
+    .mag-head h3{font-size:19px;}
+    .mag-story{grid-column:1/3; padding:26px 22px;}
+    .mag-story h2{font-size:22px;}
+    .mag-mission, .mag-vision{grid-column:1/3;}
+    .mag-tile{padding:20px 20px;}
+    .mag-care{padding:18px 14px;}
+    .chat-wrap{padding:40px 0;}
+    .chat-card{border-radius:20px;}
+    .chat-header{padding:14px 16px;}
+    .chat-body{padding:20px 16px;}
+    .bubble{max-width:92%; font-size:13.5px;}
+    .highlights{padding:0 0 40px;}
+    .hl-head h2{font-size:24px;}
+    .hl-row{gap:18px 22px;}
+    .hl-item{width:120px;}
+    .hl-circle{width:70px; height:70px; font-size:24px;}
+    .cta-banner{padding:36px 0;}
+    .cta-banner h2{font-size:24px;}
+    .contact-center{padding:40px 0;}
+    .contact-center h3{font-size:22px;}
+    .office-pills{gap:8px;}
+    .office-pill{font-size:11.5px; padding:8px 13px;}
+    .info-row{gap:14px; font-size:12px;}
+    .contact-form-center{padding:24px; border-radius:20px;}
+    footer{padding:26px 0;}
+    .foot-row{justify-content:center; text-align:center;}
+  }
 </style>
 </head>
 <body>

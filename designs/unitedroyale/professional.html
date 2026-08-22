@@ -169,6 +169,93 @@
   .foot-grid p, .foot-grid li{font-size:13px; line-height:2; color:#a6acd6; list-style:none;}
   .foot-cta{display:inline-block; margin-top:14px;}
   .foot-bottom{display:flex; justify-content:space-between; padding-top:24px; font-size:12.5px; color:#6f76a8; flex-wrap:wrap; gap:8px;}
+
+  /* ===== Responsive ===== */
+  @media (max-width: 1024px){
+    .wrap{padding:0 28px;}
+    .topbar .wrap{padding:9px 28px; flex-wrap:wrap; gap:6px;}
+    .nav .wrap{padding:16px 28px;}
+    nav.links{display:none;}
+    .brand .name{font-size:16px;}
+    .brand .name small{font-size:9px;}
+    .hero .wrap{padding:56px 28px 64px; grid-template-columns:1fr; gap:44px;}
+    .hero h1{font-size:36px;}
+    .hero p{max-width:100%;}
+    .hero-stats{gap:24px;}
+    .hero-visual{height:340px; width:100%; max-width:480px; margin:0 auto;}
+    .hero-photo{width:90%; height:300px; top:8px;}
+    .crown-badge{width:58px; height:58px;}
+    .crown-badge svg{width:24px; height:24px;}
+    .float-card{width:230px; bottom:-18px;}
+    .logo-strip .wrap{gap:12px 20px; justify-content:center; text-align:center;}
+    section{padding:60px 0;}
+    .sec-head h2{font-size:28px;}
+    .stat-row{grid-template-columns:repeat(2,1fr); gap:26px 20px;}
+    .svc-grid.cols-3, .svc-grid.cols-4{grid-template-columns:repeat(2,1fr);}
+    .svc-grid.cols-2{grid-template-columns:repeat(2,1fr); gap:16px;}
+    .about-grid{grid-template-columns:1fr; gap:40px;}
+    .care-row{grid-template-columns:repeat(2,1fr); gap:16px;}
+    .quote-grid{grid-template-columns:1fr; gap:32px;}
+    .quote-photo img{height:260px;}
+    .teaser-grid{grid-template-columns:repeat(2,1fr); gap:16px;}
+    .cta-band .wrap{padding:44px 28px;}
+    .loc-row{grid-template-columns:repeat(3,1fr); gap:14px;}
+    .contact-grid{grid-template-columns:1fr; gap:36px;}
+    .foot-grid{grid-template-columns:repeat(2,1fr); gap:28px;}
+  }
+
+  @media (max-width: 600px){
+    .wrap{padding:0 20px;}
+    .topbar{font-size:11px;}
+    .topbar .wrap{padding:8px 20px;}
+    .topbar .wrap > div:first-child{display:flex; flex-wrap:wrap; gap:4px 10px;}
+    .topbar span{margin-right:0;}
+    .nav .wrap{padding:14px 20px; flex-wrap:wrap; gap:12px;}
+    .brand{flex:1 1 100%;}
+    .brand .mark{width:38px; height:38px;}
+    .brand .name{font-size:14px;}
+    .brand .name small{font-size:9px;}
+    .cta-btn{padding:9px 16px; font-size:12.5px; white-space:nowrap; margin-left:auto;}
+    .hero .wrap{padding:40px 20px 48px;}
+    .eyebrow{font-size:11px; padding:7px 12px;}
+    .hero h1{font-size:26px; line-height:1.24;}
+    .hero p{font-size:14px;}
+    .hero-actions{flex-direction:column; gap:10px;}
+    .hero-actions a{text-align:center;}
+    .hero-stats{gap:16px; margin-top:32px; padding-top:20px;}
+    .hero-stats div{font-size:11.5px;}
+    .hero-stats strong{font-size:20px;}
+    .hero-visual{height:250px; max-width:100%;}
+    .hero-photo{width:100%; height:220px; right:0; top:14px;}
+    .crown-badge{width:48px; height:48px; top:-10px; left:6px;}
+    .crown-badge svg{width:20px; height:20px;}
+    .float-card{width:calc(100% - 12px); left:0; bottom:-16px; padding:14px 16px;}
+    .logo-strip{padding:20px 0;}
+    .logo-strip span{font-size:11px;}
+    section{padding:44px 0;}
+    .kicker{font-size:11px;}
+    .sec-head{margin:0 auto 30px;}
+    .sec-head h2{font-size:22px;}
+    .sec-head p{font-size:14px;}
+    .stat-row{grid-template-columns:1fr; gap:22px;}
+    .stat-card .num{font-size:32px;}
+    .cat-block{margin-bottom:34px;}
+    .svc-grid.cols-3, .svc-grid.cols-4, .svc-grid.cols-2{grid-template-columns:1fr; gap:14px;}
+    .scard{padding:20px 18px;}
+    .scard.feature{padding:24px 20px;}
+    .about-copy h2{font-size:24px;}
+    .care-row{grid-template-columns:repeat(2,1fr); gap:12px; margin-top:32px;}
+    .care-card{padding:20px 14px;}
+    .quote-photo img{height:200px;}
+    .quote-box p{font-size:18px;}
+    .teaser-grid{grid-template-columns:1fr; gap:14px;}
+    .cta-band .wrap{flex-direction:column; align-items:flex-start; padding:36px 20px; gap:18px;}
+    .loc-row{grid-template-columns:1fr; gap:12px; margin-bottom:26px;}
+    .contact-grid{gap:28px;}
+    .form-card{padding:24px 20px;}
+    .foot-grid{grid-template-columns:1fr; gap:26px;}
+    .foot-bottom{flex-direction:column; gap:8px;}
+  }
 </style>
 </head>
 <body>

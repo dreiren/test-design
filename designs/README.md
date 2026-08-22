@@ -24,6 +24,30 @@ Each concept is a full home-page mockup delivered as high-resolution **JPEG** an
 | United Royale | Modern Professional | [`unitedroyale/professional.html`](unitedroyale/professional.html) | [`exports/unitedroyale-professional.jpg`](exports/unitedroyale-professional.jpg) | [`exports/unitedroyale-professional.pdf`](exports/unitedroyale-professional.pdf) |
 | United Royale | Gen Z / Alpha | [`unitedroyale/genz.html`](unitedroyale/genz.html) | [`exports/unitedroyale-genz.jpg`](exports/unitedroyale-genz.jpg) | [`exports/unitedroyale-genz.pdf`](exports/unitedroyale-genz.pdf) |
 
+## Responsive Previews
+
+Every one of the six concepts above now ships with real CSS media queries (not just fluid units) tuned for two additional breakpoints, on top of the original 1440px desktop layout:
+
+- **Tablet — 834px** (`max-width: 1024px` media query) — iPad-portrait-ish width. Multi-column grids collapse to 2 columns, hero/split-screen layouts stay side-by-side or begin stacking depending on available room, and nav trims down to logo + primary CTA.
+- **Mobile — 390px** (`max-width: 600px` media query) — modern phone width. All grids collapse to a single column, hero/split layouts stack fully vertically, decorative absolutely-positioned elements (seals, puzzle pieces, bento tiles, crowns, float cards) are resized/repositioned to fit, and nav collapses to logo + condensed CTA (wrapping to a second row where a full company name needs it).
+
+Desktop (>1024px) appearance, copy, and color palettes are unchanged — the responsive behavior is purely additive, layered on at the end of each file's `<style>` block.
+
+Each concept was re-rendered at all three widths (desktop / tablet / mobile), producing a JPEG + PDF pair per breakpoint:
+
+| Site | Direction | Desktop JPEG | Tablet JPEG | Mobile JPEG |
+|---|---|---|---|---|
+| FGDLaw | Modern Professional | [`fgdlaw-professional.jpg`](exports/fgdlaw-professional.jpg) | [`fgdlaw-professional-tablet.jpg`](exports/fgdlaw-professional-tablet.jpg) | [`fgdlaw-professional-mobile.jpg`](exports/fgdlaw-professional-mobile.jpg) |
+| FGDLaw | Gen Z / Alpha | [`fgdlaw-genz.jpg`](exports/fgdlaw-genz.jpg) | [`fgdlaw-genz-tablet.jpg`](exports/fgdlaw-genz-tablet.jpg) | [`fgdlaw-genz-mobile.jpg`](exports/fgdlaw-genz-mobile.jpg) |
+| Fortitude Global | Modern Professional | [`fortitude-professional.jpg`](exports/fortitude-professional.jpg) | [`fortitude-professional-tablet.jpg`](exports/fortitude-professional-tablet.jpg) | [`fortitude-professional-mobile.jpg`](exports/fortitude-professional-mobile.jpg) |
+| Fortitude Global | Gen Z / Alpha | [`fortitude-genz.jpg`](exports/fortitude-genz.jpg) | [`fortitude-genz-tablet.jpg`](exports/fortitude-genz-tablet.jpg) | [`fortitude-genz-mobile.jpg`](exports/fortitude-genz-mobile.jpg) |
+| United Royale | Modern Professional | [`unitedroyale-professional.jpg`](exports/unitedroyale-professional.jpg) | [`unitedroyale-professional-tablet.jpg`](exports/unitedroyale-professional-tablet.jpg) | [`unitedroyale-professional-mobile.jpg`](exports/unitedroyale-professional-mobile.jpg) |
+| United Royale | Gen Z / Alpha | [`unitedroyale-genz.jpg`](exports/unitedroyale-genz.jpg) | [`unitedroyale-genz-tablet.jpg`](exports/unitedroyale-genz-tablet.jpg) | [`unitedroyale-genz-mobile.jpg`](exports/unitedroyale-genz-mobile.jpg) |
+
+A matching PDF sits alongside every JPEG above (e.g. `exports/fgdlaw-professional-tablet.pdf`, `exports/fgdlaw-professional-mobile.pdf`), following the same `<company>-<concept>-tablet.pdf` / `-mobile.pdf` naming convention, for print/presentation use just like the existing desktop PDFs.
+
+The render script (`designs/scripts/render.js`) now accepts a configurable viewport width — either a 4th CLI argument or the `RENDER_WIDTH` environment variable — defaulting to `1440` so existing desktop commands keep working unchanged. See "How these were produced" below for the exact commands used to regenerate the tablet/mobile renders.
+
 ## Site Analysis
 
 ### FGDLaw (fgdlaw.net)
@@ -80,6 +104,15 @@ node render.js ../fgdlaw/professional.html ../exports/fgdlaw-professional.jpg ..
 
 If Chrome isn't installed at `/usr/local/bin/google-chrome`, set `CHROME_PATH` to its location first.
 
+To regenerate the tablet or mobile renders (or preview any other custom width), pass the desired viewport width as an optional 4th argument — device scale factor stays fixed at 2 for crisp output either way:
+
+```bash
+node render.js ../fgdlaw/professional.html ../exports/fgdlaw-professional-tablet.jpg ../exports/fgdlaw-professional-tablet.pdf 834
+node render.js ../fgdlaw/professional.html ../exports/fgdlaw-professional-mobile.jpg ../exports/fgdlaw-professional-mobile.pdf 390
+```
+
+The same width can also be supplied via the `RENDER_WIDTH` environment variable instead of the CLI argument (the CLI argument takes precedence when both are set); omitting both defaults to the original `1440` desktop width.
+
 ## Note on mobile readiness
 
-Every export in this project is rendered at a fixed desktop width (1440px) for the JPEG/PDF deliverable, so none of these mockups include literal responsive breakpoints. The United Royale concepts, however, were deliberately written with mobile-friendly CSS foundations — flexbox and CSS grid for all layout (services grids, bento panels, stat rows, contact/footer columns), relative units for spacing and type, and no fixed absolute-only positioning outside of small decorative badges/overlays — so that a future responsive build can adapt column counts at breakpoints without restructuring the underlying markup.
+All six concepts now ship with genuine responsive CSS (see "Responsive Previews" above for the full breakdown and rendered breakpoint previews) — multi-column grids collapse, split-screen heroes stack, navigation condenses, and decorative absolutely-positioned elements adapt at both a tablet (834px / `max-width:1024px`) and mobile (390px / `max-width:600px`) breakpoint, without altering the original desktop (>1024px) layout, copy, or color palette. The United Royale concepts additionally started from mobile-friendly CSS foundations — flexbox and CSS grid for all layout, relative units for spacing and type, and no fixed absolute-only positioning outside of small decorative badges/overlays — which made their responsive pass especially straightforward.
