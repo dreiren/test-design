@@ -39,128 +39,149 @@
   nav.links a.pill{background:var(--card); border:1px solid var(--line); padding:6px 15px; border-radius:20px; color:var(--ink); font-size:12.5px;}
   .cta-pill{background:var(--brick); color:#fff; font-weight:800; padding:12px 24px; border-radius:30px; font-size:14px;}
 
-  /* ---------- Split-screen asymmetric hero ---------- */
-  .hero-split{display:grid; grid-template-columns:44% 56%; align-items:stretch; min-height:520px;}
-  .hero-media{position:relative; overflow:hidden; background:var(--peri);}
-  .hero-media img{width:100%; height:100%; object-fit:cover; object-position:center 18%;}
-  .hero-media .media-badge{position:absolute; bottom:22px; left:22px; background:rgba(255,255,255,.94); color:var(--ink); font-size:12.5px; font-weight:700; padding:8px 14px; border-radius:20px;}
-  .hero-media .media-crown{position:absolute; top:22px; left:22px; width:46px; height:46px; border-radius:14px; background:var(--brick); color:#fff; display:flex; align-items:center; justify-content:center; font-size:20px; box-shadow:0 12px 26px -10px rgba(152,43,26,.6);}
-  .hero-content{display:flex; align-items:center; padding:56px 56px 56px 60px;}
-  .hero-inner{max-width:520px;}
-  .tagpill{display:inline-flex; align-items:center; gap:8px; background:var(--peri); color:var(--peri-ink); padding:8px 16px; border-radius:30px; font-size:12.5px; font-weight:700; margin-bottom:22px;}
-  .hero-content h1{font-size:46px; line-height:1.1; font-weight:700; letter-spacing:-.01em; margin-bottom:20px; color:var(--ink);}
-  .hero-content p{font-size:15.5px; color:var(--muted); line-height:1.65; margin-bottom:26px;}
-  .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:30px;}
   .btn-neon{background:var(--brick); color:#fff; font-weight:800; padding:16px 28px; border-radius:14px; font-size:14.5px; display:inline-block;}
-  .btn-ghost{border:1.5px solid var(--line); background:var(--card); color:var(--ink); padding:16px 28px; border-radius:14px; font-size:14.5px; font-weight:700;}
-  .chip-row{display:flex; gap:10px; flex-wrap:wrap;}
+  .btn-ghost{border:1.5px solid var(--line); background:var(--card); color:var(--ink); padding:16px 28px; border-radius:14px; font-size:14.5px; font-weight:700; display:inline-block;}
   .chip{background:var(--card); border:1px solid var(--line); padding:8px 14px; border-radius:12px; font-size:12.5px; color:var(--muted); display:flex; align-items:center; gap:6px;}
   .chip b{color:var(--ink);}
+  .tagpill{display:inline-flex; align-items:center; gap:8px; background:var(--peri); color:var(--peri-ink); padding:8px 16px; border-radius:30px; font-size:12.5px; font-weight:700;}
 
-  /* ---------- Oversized stat ticker, right after hero ---------- */
-  .stat-ticker{background:var(--peri); padding:38px 0; position:relative; z-index:2;}
-  .ticker-row{display:flex; align-items:center; justify-content:space-between;}
-  .tick{flex:1; text-align:center; padding:0 10px;}
-  .tick .num{font-family:'Space Grotesk',sans-serif; font-size:52px; font-weight:700; letter-spacing:-.01em; display:block; line-height:1;}
-  .tick:nth-child(odd) .num{color:var(--navy);}
-  .tick:nth-child(even) .num{color:var(--brick);}
-  .tick .lab{font-size:11.5px; color:var(--ink); opacity:.72; margin-top:8px; text-transform:uppercase; letter-spacing:.05em; font-weight:700;}
-  .tick-div{width:1px; height:52px; background:var(--peri-2);}
+  /* ---------- Centered "story-scroll" hero + full-bleed photo band ---------- */
+  .hero-center{padding:54px 0 0; text-align:center;}
+  .hero-center .wrap{max-width:740px;}
+  .hero-center .tagpill{margin-bottom:22px;}
+  .hero-center h1{font-size:48px; line-height:1.12; font-weight:700; letter-spacing:-.01em; margin-bottom:18px;}
+  .hero-center p{font-size:16px; color:var(--muted); line-height:1.65; margin:0 auto 28px; max-width:560px;}
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-bottom:26px;}
+  .chip-row{display:flex; gap:10px; flex-wrap:wrap; justify-content:center;}
 
-  /* ---------- Diagonal divider wedge between sections ---------- */
-  .divider-diagonal{height:58px; background:var(--peri); clip-path:polygon(0 100%, 100% 0, 100% 100%);}
+  .photo-band{position:relative; margin-top:42px; height:360px; overflow:hidden;}
+  .photo-band img{width:100%; height:100%; object-fit:cover; object-position:center 18%;}
+  .photo-band::after{content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(38,45,115,0) 55%, rgba(28,30,46,.55) 100%);}
+  .photo-band .cap{position:absolute; bottom:22px; left:50%; transform:translateX(-50%); background:rgba(255,255,255,.95); color:var(--ink); padding:10px 20px; border-radius:30px; font-size:13px; font-weight:700; box-shadow:0 14px 30px -14px rgba(0,0,0,.3); z-index:2;}
 
-  section.svc{padding:72px 0;}
-  .sec-head{max-width:620px; margin-bottom:40px;}
+  /* ---------- Single big "hero stat" callout + 3 smaller stats ---------- */
+  .stat-hero{padding:64px 0;}
+  .stat-hero .wrap{display:grid; grid-template-columns:1.15fr 1fr; gap:26px; align-items:stretch;}
+  .stat-hero-main{background:var(--navy); color:#fff; border-radius:28px; padding:44px 42px; display:flex; flex-direction:column; justify-content:center;}
+  .stat-hero-main .kicker{font-size:12px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; opacity:.65; margin-bottom:10px;}
+  .stat-hero-main .num{font-family:'Space Grotesk',sans-serif; font-size:88px; font-weight:700; line-height:1;}
+  .stat-hero-main .lab{font-size:16px; font-weight:700; margin-top:8px;}
+  .stat-hero-main .sub{font-size:13px; opacity:.72; margin-top:14px; line-height:1.6; max-width:380px;}
+  .stat-side{display:flex; flex-direction:column; gap:14px;}
+  .stat-mini{display:flex; align-items:center; gap:16px; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px 22px; flex:1;}
+  .stat-mini .num{font-family:'Space Grotesk',sans-serif; font-size:28px; font-weight:700; color:var(--brick); flex-shrink:0; min-width:80px;}
+  .stat-mini .lab{font-size:12.5px; color:var(--muted); font-weight:700; line-height:1.4;}
+
+  /* ---------- Category-tab horizontal service reels ---------- */
+  section.svc{padding:20px 0 74px;}
+  .sec-head{max-width:620px; margin-bottom:32px;}
   .sec-head .kicker{color:var(--brick); font-weight:800; font-size:13px; letter-spacing:.04em; text-transform:uppercase; margin-bottom:14px;}
   .sec-head h2{font-size:36px; font-weight:700;}
   .sec-head p{color:var(--muted); margin-top:14px; font-size:15px; line-height:1.65;}
 
-  /* ---------- Tab/accordion service panels with jump sidebar ---------- */
-  .svc-shell{display:grid; grid-template-columns:230px 1fr; gap:32px; align-items:start;}
-  .svc-jump{position:sticky; top:28px; display:flex; flex-direction:column; gap:8px;}
-  .jump-link{display:flex; align-items:center; gap:10px; padding:13px 16px; border-radius:14px; font-size:13px; font-weight:700; color:var(--muted); border:1px solid var(--line); background:var(--card);}
-  .jump-link .dot{width:8px; height:8px; border-radius:50%; background:var(--line); flex-shrink:0;}
-  .jump-link.active{background:var(--navy); color:#fff; border-color:var(--navy);}
-  .jump-link.active .dot{background:var(--brick);}
-  .jump-note{font-size:11.5px; color:var(--muted); padding:0 4px; margin-top:6px; line-height:1.5;}
+  .svc-tabs{display:flex; gap:10px; margin-bottom:36px; flex-wrap:wrap;}
+  .svc-tab{padding:10px 18px; border-radius:20px; font-size:12.5px; font-weight:700; border:1px solid var(--line); background:var(--card); color:var(--muted); display:flex; align-items:center; gap:7px;}
+  .svc-tab.t1{background:var(--peri); color:var(--peri-ink); border-color:var(--peri);}
+  .svc-tab.t2{background:var(--blush); color:var(--blush-ink); border-color:var(--blush);}
+  .svc-tab.t3{background:var(--navy); color:#fff; border-color:var(--navy);}
+  .svc-tab.t4{background:var(--brick); color:#fff; border-color:var(--brick);}
 
-  .panel{border:1px solid var(--line); border-radius:24px; margin-bottom:16px; padding:26px 28px; background:var(--card);}
-  .panel:last-child{margin-bottom:0;}
-  .panel-head{display:flex; align-items:center; gap:16px; margin-bottom:6px;}
-  .panel-head .panel-icon{width:44px; height:44px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0;}
-  .panel.t1 .panel-icon{background:var(--peri); color:var(--peri-ink);}
-  .panel.t2 .panel-icon{background:var(--blush); color:var(--blush-ink);}
-  .panel.t3 .panel-icon{background:var(--navy); color:#fff;}
-  .panel.t4 .panel-icon{background:var(--brick); color:#fff;}
-  .panel-head h3{font-size:19px; font-weight:700;}
-  .panel-head .chev{margin-left:auto; font-size:18px; color:var(--muted); transform:rotate(180deg);}
-  .panel-body{margin-top:14px;}
-  .prow{display:flex; gap:14px; align-items:flex-start; padding:14px 0; border-top:1px solid var(--line);}
-  .prow:first-child{border-top:none;}
-  .prow .pic{font-size:19px; width:38px; height:38px; border-radius:11px; background:var(--bg); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
-  .prow h4{font-size:14.5px; font-weight:700; margin-bottom:4px;}
-  .prow p{font-size:12.5px; color:var(--muted); line-height:1.55;}
+  .reel-group{margin-bottom:32px;}
+  .reel-group:last-child{margin-bottom:0;}
+  .reel-head{display:flex; align-items:center; gap:12px; margin-bottom:14px;}
+  .reel-head .ic{width:36px; height:36px; border-radius:11px; display:flex; align-items:center; justify-content:center; font-size:17px; flex-shrink:0;}
+  .reel-group.g1 .ic{background:var(--peri); color:var(--peri-ink);}
+  .reel-group.g2 .ic{background:var(--blush); color:var(--blush-ink);}
+  .reel-group.g3 .ic{background:var(--navy); color:#fff;}
+  .reel-group.g4 .ic{background:var(--brick); color:#fff;}
+  .reel-head h4{font-size:15.5px; font-weight:700;}
+  .reel-head .count{font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); padding:4px 11px; border-radius:12px; margin-left:auto; font-weight:700;}
 
-  /* ---------- About / Mission-Vision / CARE, offset diagonal band ---------- */
-  .about-strip{background:var(--peri); padding:56px 0 80px;}
-  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:start; padding-top:20px;}
-  .about-copy h2{font-size:32px; font-weight:700; margin-bottom:16px;}
-  .about-copy p{color:var(--muted); font-size:15px; line-height:1.7; margin-bottom:14px;}
-  .mv-row{display:flex; flex-direction:column; gap:14px; margin-top:20px;}
-  .mv-chip{background:var(--card); border:1px solid var(--peri-2); border-radius:16px; padding:18px 20px;}
-  .mv-chip .tag{font-size:11px; font-weight:800; color:var(--brick); text-transform:uppercase; letter-spacing:.06em; margin-bottom:6px;}
-  .mv-chip p{font-size:13px; color:var(--muted); line-height:1.6;}
-  .care-stickers{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;}
-  .care-sticker{border-radius:20px; padding:22px 18px; font-weight:700;}
-  .care-sticker.c1{background:var(--navy); color:#fff;}
-  .care-sticker.c2{background:var(--card); color:var(--peri-ink); border:1px solid var(--peri-2);}
-  .care-sticker.c3{background:var(--blush); color:var(--blush-ink);}
-  .care-sticker.c4{background:var(--brick); color:#fff;}
-  .care-sticker .big-letter{font-family:'Space Grotesk',sans-serif; font-size:34px; margin-bottom:6px;}
-  .care-sticker .lbl{font-size:12.5px;}
+  .reel-viewport{overflow:hidden;}
+  .reel{display:flex; gap:14px;}
+  .reel-card{flex:0 0 auto; width:224px; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:20px 18px;}
+  .reel-card .badge{font-size:21px; margin-bottom:12px; display:block;}
+  .reel-card h5{font-size:13.5px; font-weight:700; margin-bottom:6px; line-height:1.35;}
+  .reel-card p{font-size:12px; color:var(--muted); line-height:1.55;}
+  .reel-card.wide{width:100%; display:flex; align-items:center; gap:20px;}
+  .reel-card.wide .badge{font-size:30px; margin-bottom:0;}
+  .reel-card.wide h5{margin-bottom:6px;}
+  .reel-dots{display:flex; gap:6px; margin-top:16px;}
+  .reel-dots span{width:6px; height:6px; border-radius:50%; background:var(--line); display:block;}
+  .reel-dots span.on{background:var(--brick); width:20px; border-radius:4px;}
 
-  /* ---------- Large pull-quote beside photo ---------- */
-  .quote-band{padding:80px 0;}
-  .quote-split{display:grid; grid-template-columns:320px 1fr; gap:44px; align-items:center;}
-  .quote-photo{position:relative; border-radius:28px; overflow:hidden; height:300px; box-shadow:0 24px 46px -22px rgba(38,45,115,.32);}
-  .quote-photo img{width:100%; height:100%; object-fit:cover; object-position:center 30%;}
-  .quote-photo .qmark{position:absolute; bottom:14px; right:14px; width:44px; height:44px; border-radius:50%; background:var(--brick); color:#fff; font-family:'Space Grotesk',sans-serif; font-size:24px; display:flex; align-items:center; justify-content:center;}
-  .quote-copy .big-quote-mark{font-family:'Space Grotesk',sans-serif; font-size:64px; color:var(--brick); opacity:.35; line-height:1; display:block; margin-bottom:2px;}
-  .pull-line{font-family:'Space Grotesk',sans-serif; font-size:32px; font-weight:700; line-height:1.28; color:var(--navy); max-width:640px;}
-  .quote-copy .who{margin-top:18px; font-size:13.5px; color:var(--muted); font-weight:700;}
+  /* ---------- Magazine / masonry About + CARE grid ---------- */
+  .mag-wrap{background:var(--peri); padding:76px 0;}
+  .magazine{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  .mag-story{grid-column:1/3; grid-row:1/3; background:var(--navy); color:#fff; border-radius:24px; padding:38px 34px; display:flex; flex-direction:column; justify-content:center;}
+  .mag-story .tagpill{background:rgba(255,255,255,.14); color:#fff; margin-bottom:16px;}
+  .mag-story h2{font-size:29px; font-weight:700; margin-bottom:14px; line-height:1.25;}
+  .mag-story p{font-size:13.5px; opacity:.82; line-height:1.65;}
+  .mag-tile{border-radius:20px; padding:24px 26px;}
+  .mag-mission{grid-column:3/5; grid-row:1/2; background:var(--card); border:1px solid var(--peri-2);}
+  .mag-vision{grid-column:3/5; grid-row:2/3; background:var(--blush);}
+  .mag-tile .tag{font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:.06em; margin-bottom:8px;}
+  .mag-mission .tag{color:var(--peri-ink);}
+  .mag-vision .tag{color:var(--blush-ink);}
+  .mag-tile p{font-size:13px; line-height:1.6; color:var(--ink); opacity:.85;}
+  .mag-care{border-radius:20px; padding:22px 18px; font-weight:700;}
+  .mag-care.c1{background:var(--navy); color:#fff;}
+  .mag-care.c2{background:var(--card); color:var(--peri-ink); border:1px solid var(--peri-2);}
+  .mag-care.c3{background:var(--blush); color:var(--blush-ink);}
+  .mag-care.c4{background:var(--brick); color:#fff;}
+  .mag-care .big-letter{font-family:'Space Grotesk',sans-serif; font-size:32px; margin-bottom:6px;}
+  .mag-care .lbl{font-size:12px;}
+  .mag-head{margin-bottom:16px; grid-column:1/5;}
+  .mag-head .kicker{color:var(--brick); font-weight:800; font-size:12.5px; letter-spacing:.05em; text-transform:uppercase; margin-bottom:6px;}
+  .mag-head h3{font-size:22px; font-weight:700;}
 
-  /* ---------- Careers/wins teaser as a compact banded strip ---------- */
-  .teaser-band{padding:0 0 76px;}
-  .teaser-card{background:var(--card); border:1px solid var(--line); border-radius:26px; display:grid; grid-template-columns:repeat(3,1fr); overflow:hidden;}
-  .teaser-item{padding:30px 28px; border-left:1px solid var(--line);}
-  .teaser-item:first-child{border-left:none;}
-  .teaser-item .badge{font-size:22px; margin-bottom:12px; display:block;}
-  .teaser-item h3{font-size:15px; font-weight:700; margin-bottom:8px;}
-  .teaser-item p{font-size:12.5px; color:var(--muted); line-height:1.55;}
+  /* ---------- Chat-bubble / DM-style testimonial ---------- */
+  .chat-wrap{padding:76px 0;}
+  .chat-card{max-width:600px; margin:0 auto; background:var(--card); border:1px solid var(--line); border-radius:26px; overflow:hidden; box-shadow:0 26px 54px -26px rgba(38,45,115,.28);}
+  .chat-header{display:flex; align-items:center; gap:12px; padding:16px 20px; border-bottom:1px solid var(--line);}
+  .chat-header img{width:38px; height:38px; border-radius:50%; object-fit:cover; object-position:center 30%;}
+  .chat-header .name{font-size:13.5px; font-weight:700;}
+  .chat-header .status{font-size:11px; color:#2f9e5e; display:flex; align-items:center; gap:5px; margin-top:2px;}
+  .chat-header .status .dot{width:7px; height:7px; border-radius:50%; background:#2f9e5e;}
+  .chat-header .verified{margin-left:auto; font-size:11px; color:var(--muted); background:var(--bg); border:1px solid var(--line); padding:5px 11px; border-radius:12px; font-weight:700;}
+  .chat-body{padding:26px 22px 24px; background:var(--bg);}
+  .bubble{max-width:82%; padding:15px 19px; border-radius:18px; font-size:14px; line-height:1.55;}
+  .bubble.in{background:var(--peri); color:var(--ink); border-bottom-left-radius:5px; margin-right:auto;}
+  .bubble.out{background:var(--navy); color:#fff; border-bottom-right-radius:5px; margin-left:auto; margin-top:16px;}
+  .bubble-time{font-size:10.5px; color:var(--muted); margin:6px 6px 0;}
+  .bubble-time.out{text-align:right;}
 
-  /* ---------- CTA with angled corner ---------- */
-  .cta-big{padding:0 0 88px; text-align:center;}
-  .cta-card{background:var(--brick); padding:66px 40px; position:relative; overflow:hidden; clip-path:polygon(0 0, 100% 0, 100% calc(100% - 42px), calc(100% - 42px) 100%, 0 100%); border-radius:32px 32px 0 0;}
-  .cta-big h2{font-size:40px; font-weight:700; max-width:620px; margin:0 auto 16px; position:relative; z-index:2; color:#fff;}
-  .cta-big p{color:#f5d9d2; margin-bottom:28px; position:relative; z-index:2;}
-  .cta-big .btn-neon{position:relative; z-index:2; display:inline-block; background:#fff; color:var(--brick);}
+  /* ---------- Careers/wins as story-highlight circles ---------- */
+  .highlights{padding:0 0 76px;}
+  .hl-head{text-align:center; margin-bottom:32px;}
+  .hl-head .kicker{color:var(--brick); font-weight:800; font-size:13px; letter-spacing:.04em; text-transform:uppercase; margin-bottom:10px;}
+  .hl-head h2{font-size:30px; font-weight:700;}
+  .hl-row{display:flex; justify-content:center; gap:38px; flex-wrap:wrap;}
+  .hl-item{display:flex; flex-direction:column; align-items:center; gap:12px; width:150px; text-align:center;}
+  .hl-circle{width:86px; height:86px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:30px; border:3px solid;}
+  .hl-circle.c1{border-color:var(--navy); background:var(--peri);}
+  .hl-circle.c2{border-color:var(--brick); background:var(--blush);}
+  .hl-circle.c3{border-color:var(--navy-2); background:var(--card);}
+  .hl-item h5{font-size:13.5px; font-weight:700;}
+  .hl-item p{font-size:11.5px; color:var(--muted); line-height:1.45;}
 
-  /* ---------- Contact: asymmetric sidebar + vertical office timeline ---------- */
-  .contact-band{padding:0 0 76px;}
-  .contact-card{background:var(--card); border:1px solid var(--line); border-radius:28px; padding:46px; display:grid; grid-template-columns:1.15fr .85fr; gap:48px;}
-  .contact-card h3{font-size:24px; font-weight:700; margin-bottom:14px;}
-  .loc-timeline{margin-top:22px; position:relative; padding-left:22px;}
-  .loc-timeline::before{content:''; position:absolute; left:5px; top:6px; bottom:6px; width:2px; background:var(--peri-2);}
-  .loc-item{position:relative; padding-bottom:20px;}
-  .loc-item:last-child{padding-bottom:0;}
-  .loc-item::before{content:''; position:absolute; left:-22px; top:3px; width:12px; height:12px; border-radius:50%; background:var(--brick); border:3px solid var(--bg);}
-  .loc-item .loc-name{font-size:13.5px; font-weight:700; color:var(--ink);}
-  .loc-item .loc-addr{font-size:12.5px; color:var(--muted); margin-top:2px;}
-  .contact-list{display:flex; flex-direction:column; gap:12px; margin-top:22px;}
-  .contact-list .row2{display:flex; gap:12px; align-items:center; font-size:13.5px; color:var(--muted);}
-  .contact-list .row2 .ic{width:32px; height:32px; border-radius:9px; background:var(--blush); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
-  .contact-form input, .contact-form textarea{width:100%; background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:14px 16px; color:var(--ink); font-family:'Sora',sans-serif; font-size:14px; margin-bottom:14px;}
+  /* ---------- Full-bleed CTA banner (edge to edge, no card) ---------- */
+  .cta-banner{background:var(--brick); padding:64px 0; text-align:center;}
+  .cta-banner h2{color:#fff; font-size:36px; font-weight:700; max-width:600px; margin:0 auto 14px;}
+  .cta-banner p{color:#f5d9d2; margin-bottom:26px; font-size:15px;}
+  .cta-banner .btn-neon{background:#fff; color:var(--brick);}
+
+  /* ---------- Simple centered contact card ---------- */
+  .contact-center{padding:76px 0;}
+  .contact-center .wrap{max-width:640px; text-align:center;}
+  .contact-center h3{font-size:28px; font-weight:700; margin-bottom:12px;}
+  .contact-center > .wrap > p{color:var(--muted); font-size:14.5px; line-height:1.6; margin-bottom:26px;}
+  .office-pills{display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-bottom:28px;}
+  .office-pill{background:var(--peri); color:var(--peri-ink); font-size:12.5px; font-weight:700; padding:9px 16px; border-radius:20px;}
+  .info-row{display:flex; justify-content:center; gap:24px; flex-wrap:wrap; margin-bottom:36px; font-size:13px; color:var(--muted); font-weight:600;}
+  .info-row .row2{display:flex; align-items:center; gap:8px;}
+  .contact-form-center{max-width:440px; margin:0 auto; text-align:left; background:var(--card); border:1px solid var(--line); border-radius:24px; padding:30px;}
+  .contact-form-center input, .contact-form-center textarea{width:100%; background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:14px 16px; color:var(--ink); font-family:'Sora',sans-serif; font-size:14px; margin-bottom:14px;}
   .field-lbl{font-size:12px; color:var(--muted); margin-bottom:6px; display:block; font-weight:600;}
 
   footer{background:var(--navy); padding:34px 0; color:#c6cbea;}
@@ -177,189 +198,162 @@
     <a class="cta-pill">Apply Now →</a>
   </div></header>
 
-  <section class="hero-split">
-    <div class="hero-media">
-      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=760&q=80&auto=format&fit=crop" alt="United Royale personnel working together in an office setting">
-      <div class="media-crown">👑</div>
-      <div class="media-badge">the actual team 💼</div>
+  <section class="hero-center"><div class="wrap">
+    <div class="tagpill">👑 staffing that actually shows up</div>
+    <h1>Your workforce game, <span class="grad-text">royally leveled up</span> 👑</h1>
+    <p>United Royale Corp has been sourcing skilled people since 2000 — from admin to telesales — so your business runs smooth while you focus on the big picture. 20+ years in the game, zero rookie mistakes.</p>
+    <div class="hero-actions">
+      <a class="btn-neon">Request a Consultation 👑</a>
+      <a class="btn-ghost">See what we offer</a>
     </div>
-    <div class="hero-content"><div class="hero-inner">
-      <div class="tagpill">👑 staffing that actually shows up</div>
-      <h1>Your workforce game, <span class="grad-text">royally leveled up</span> 👑</h1>
-      <p>United Royale Corp has been sourcing skilled people since 2000 — from admin to telesales — so your business runs smooth while you focus on the big picture. 20+ years in the game, zero rookie mistakes.</p>
-      <div class="hero-actions">
-        <a class="btn-neon">Request a Consultation 👑</a>
-        <a class="btn-ghost">See what we offer</a>
-      </div>
-      <div class="chip-row">
-        <div class="chip">🧩 <b>9</b> service lines</div>
-        <div class="chip">📍 <b>3</b> locations nationwide</div>
-        <div class="chip">✅ <b>DOLE</b>-registered</div>
-      </div>
-    </div></div>
-  </section>
+    <div class="chip-row">
+      <div class="chip">🧩 <b>9</b> service lines</div>
+      <div class="chip">📍 <b>3</b> locations nationwide</div>
+      <div class="chip">✅ <b>DOLE</b>-registered</div>
+    </div>
+  </div></section>
 
-  <section class="stat-ticker"><div class="wrap ticker-row">
-    <div class="tick"><span class="num">26</span><span class="lab">Years in the industry</span></div>
-    <div class="tick-div"></div>
-    <div class="tick"><span class="num">1,200+</span><span class="lab">Personnel deployed</span></div>
-    <div class="tick-div"></div>
-    <div class="tick"><span class="num">150+</span><span class="lab">Corporate clients</span></div>
-    <div class="tick-div"></div>
-    <div class="tick"><span class="num">10+</span><span class="lab">Sectors supported</span></div>
+  <div class="photo-band">
+    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1600&q=80&auto=format&fit=crop" alt="United Royale personnel working together in an office setting" style="object-position:center 30%;">
+    <div class="cap">👑 the actual team 💼 — real people, real deployments</div>
+  </div>
+
+  <section class="stat-hero"><div class="wrap">
+    <div class="stat-hero-main">
+      <div class="kicker">not a startup</div>
+      <div class="num">26</div>
+      <div class="lab">years in the industry</div>
+      <div class="sub">Incorporated in 2000 and DOLE-registered — a two-decade track record of real experience, real people, real results.</div>
+    </div>
+    <div class="stat-side">
+      <div class="stat-mini"><div class="num">1,200+</div><div class="lab">Personnel deployed nationwide</div></div>
+      <div class="stat-mini"><div class="num">150+</div><div class="lab">Corporate clients served</div></div>
+      <div class="stat-mini"><div class="num">10+</div><div class="lab">Industry sectors supported</div></div>
+    </div>
   </div></section>
 
   <section class="svc" id="services"><div class="wrap">
     <div class="sec-head">
       <div class="kicker">what we staff</div>
       <h2>Every role, <span class="grad-text">covered</span></h2>
-      <p>Nine service lines, grouped into four categories that actually make sense — jump straight to the one you need on the left.</p>
+      <p>Nine service lines, grouped into four categories — swipe through each row to see the full lineup.</p>
     </div>
 
-    <div class="svc-shell">
-      <nav class="svc-jump">
-        <a class="jump-link active"><span class="dot"></span>🧹 Facilities &amp; Support</a>
-        <a class="jump-link"><span class="dot"></span>🗂️ Admin &amp; Back-Office</a>
-        <a class="jump-link"><span class="dot"></span>📞 Sales &amp; Contact</a>
-        <a class="jump-link"><span class="dot"></span>🔍 Risk &amp; Investigation</a>
-        <p class="jump-note">4 categories, 9 services, one call away.</p>
-      </nav>
+    <div class="svc-tabs">
+      <div class="svc-tab t1">🧹 Facilities &amp; Support</div>
+      <div class="svc-tab t2">🗂️ Admin &amp; Back-Office</div>
+      <div class="svc-tab t3">📞 Sales &amp; Contact</div>
+      <div class="svc-tab t4">🔍 Risk &amp; Investigation</div>
+    </div>
 
-      <div class="svc-panels">
-        <div class="panel t1">
-          <div class="panel-head">
-            <div class="panel-icon">🧹</div>
-            <h3>Facilities &amp; Support Staff</h3>
-            <span class="chev">⌄</span>
-          </div>
-          <div class="panel-body">
-            <div class="prow"><span class="pic">🧹</span><div><h4>Janitorial &amp; Maintenance</h4><p>Keeping your space spotless, always.</p></div></div>
-            <div class="prow"><span class="pic">🛵</span><div><h4>Messengerial</h4><p>Fast, reliable dispatch &amp; courier support.</p></div></div>
-            <div class="prow"><span class="pic">🧑‍💼</span><div><h4>Other Utility Personnel</h4><p>Flexible staffing for whatever comes up.</p></div></div>
-          </div>
-        </div>
+    <div class="reel-group g1">
+      <div class="reel-head"><div class="ic">🧹</div><h4>Facilities &amp; Support Staff</h4><span class="count">3 services</span></div>
+      <div class="reel-viewport"><div class="reel">
+        <div class="reel-card"><span class="badge">🧹</span><h5>Janitorial &amp; Maintenance</h5><p>Keeping your space spotless, always.</p></div>
+        <div class="reel-card"><span class="badge">🛵</span><h5>Messengerial</h5><p>Fast, reliable dispatch &amp; courier support.</p></div>
+        <div class="reel-card"><span class="badge">🧑‍💼</span><h5>Other Utility Personnel</h5><p>Flexible staffing for whatever comes up.</p></div>
+      </div></div>
+      <div class="reel-dots"><span class="on"></span><span></span><span></span></div>
+    </div>
 
-        <div class="panel t2">
-          <div class="panel-head">
-            <div class="panel-icon">🗂️</div>
-            <h3>Administrative &amp; Back-Office</h3>
-            <span class="chev">⌄</span>
-          </div>
-          <div class="panel-body">
-            <div class="prow"><span class="pic">🗂</span><div><h4>Administrative</h4><p>Organized back-office, sorted.</p></div></div>
-            <div class="prow"><span class="pic">💳</span><div><h4>HR &amp; Billing</h4><p>Payroll &amp; HR ops, handled.</p></div></div>
-            <div class="prow"><span class="pic">🖊</span><div><h4>Secretarial &amp; Exec Support</h4><p>Top-tier support for your leadership team.</p></div></div>
-            <div class="prow"><span class="pic">💻</span><div><h4>Encoders &amp; Dealer Coordination</h4><p>Accurate data, zero drama — plus dealer coordination that keeps everyone in sync.</p></div></div>
-          </div>
-        </div>
+    <div class="reel-group g2">
+      <div class="reel-head"><div class="ic">🗂️</div><h4>Administrative &amp; Back-Office</h4><span class="count">4 services</span></div>
+      <div class="reel-viewport"><div class="reel">
+        <div class="reel-card"><span class="badge">🗂</span><h5>Administrative</h5><p>Organized back-office, sorted.</p></div>
+        <div class="reel-card"><span class="badge">💳</span><h5>HR &amp; Billing</h5><p>Payroll &amp; HR ops, handled.</p></div>
+        <div class="reel-card"><span class="badge">🖊</span><h5>Secretarial &amp; Exec Support</h5><p>Top-tier support for your leadership team.</p></div>
+        <div class="reel-card"><span class="badge">💻</span><h5>Encoders &amp; Dealer Coordination</h5><p>Accurate data, zero drama — plus dealer sync.</p></div>
+      </div></div>
+      <div class="reel-dots"><span class="on"></span><span></span><span></span><span></span></div>
+    </div>
 
-        <div class="panel t3">
-          <div class="panel-head">
-            <div class="panel-icon">📞</div>
-            <h3>Sales &amp; Customer Contact</h3>
-            <span class="chev">⌄</span>
-          </div>
-          <div class="panel-body">
-            <div class="prow"><span class="pic">📞</span><div><h4>Telemarketing, Telesales &amp; Money Sorting</h4><p>Agents who actually close — trained, professional, and ready to represent your brand on every call.</p></div></div>
-          </div>
-        </div>
+    <div class="reel-group g3">
+      <div class="reel-head"><div class="ic">📞</div><h4>Sales &amp; Customer Contact</h4><span class="count">1 service</span></div>
+      <div class="reel-viewport"><div class="reel">
+        <div class="reel-card wide"><span class="badge">📞</span><div><h5>Telemarketing, Telesales &amp; Money Sorting</h5><p>Agents who actually close — trained, professional, and ready to represent your brand on every call.</p></div></div>
+      </div></div>
+    </div>
 
-        <div class="panel t4">
-          <div class="panel-head">
-            <div class="panel-icon">🔍</div>
-            <h3>Risk &amp; Investigation</h3>
-            <span class="chev">⌄</span>
-          </div>
-          <div class="panel-body">
-            <div class="prow"><span class="pic">🔍</span><div><h4>Credit Investigation</h4><p>Thorough checks, no shortcuts — diligent personnel for credit verification &amp; risk work.</p></div></div>
-          </div>
-        </div>
-      </div>
+    <div class="reel-group g4">
+      <div class="reel-head"><div class="ic">🔍</div><h4>Risk &amp; Investigation</h4><span class="count">1 service</span></div>
+      <div class="reel-viewport"><div class="reel">
+        <div class="reel-card wide"><span class="badge">🔍</span><div><h5>Credit Investigation</h5><p>Thorough checks, no shortcuts — diligent personnel for credit verification &amp; risk work.</p></div></div>
+      </div></div>
     </div>
   </div></section>
 
-  <div class="divider-diagonal"></div>
-  <section class="about-strip" id="about"><div class="wrap">
-    <div class="about-grid">
-      <div class="about-copy">
-        <div class="tagpill" style="margin-bottom:16px;">our whole story</div>
-        <h2>Not a startup — a <span class="grad-text">20+ year</span> track record 👑</h2>
+  <section class="mag-wrap" id="about"><div class="wrap">
+    <div class="magazine">
+      <div class="mag-head"><div class="kicker">our whole story, our whole vibe</div><h3>About, mission &amp; the <span class="grad-text">CARE</span> we run on 👑</h3></div>
+      <div class="mag-story">
+        <div class="tagpill">our whole story</div>
+        <h2>Not a startup — a 20+ year track record</h2>
         <p>Incorporated in 2000 and DOLE-registered under Department Order No. 174, Series of 2017, United Royale Corp has been sourcing, screening, and deploying skilled personnel across the Philippines for over two decades. No rookie moves — just real experience, real people, real results.</p>
-        <div class="mv-row">
-          <div class="mv-chip"><div class="tag">Mission</div><p>Helping partners maximize their business investments through effective, efficient HR services.</p></div>
-          <div class="mv-chip"><div class="tag">Vision</div><p>To be the leading global service provider — top-notch quality, across every sector we serve.</p></div>
-        </div>
       </div>
-      <div>
-        <div class="sec-head" style="margin-bottom:20px;">
-          <div class="kicker">our whole vibe</div>
-          <h2 style="font-size:28px;">We <span class="grad-text">CARE</span>, fr fr</h2>
-          <p style="margin-top:8px;">Not just a slogan — it's literally our whole operating system.</p>
+      <div class="mag-tile mag-mission"><div class="tag">Mission</div><p>Helping partners maximize their business investments through effective, efficient HR services.</p></div>
+      <div class="mag-tile mag-vision"><div class="tag">Vision</div><p>To be the leading global service provider — top-notch quality, across every sector we serve.</p></div>
+      <div class="mag-care c1"><div class="big-letter">C</div><div class="lbl">Competence</div></div>
+      <div class="mag-care c2"><div class="big-letter">A</div><div class="lbl">Accountability</div></div>
+      <div class="mag-care c3"><div class="big-letter">R</div><div class="lbl">Resilience</div></div>
+      <div class="mag-care c4"><div class="big-letter">E</div><div class="lbl">Excellence</div></div>
+    </div>
+  </div></section>
+
+  <section class="chat-wrap"><div class="wrap">
+    <div class="chat-card">
+      <div class="chat-header">
+        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=200&q=80&auto=format&fit=crop" alt="Smiling corporate partner discussing feedback on United Royale's staffing support">
+        <div>
+          <div class="name">Operations Manager</div>
+          <div class="status"><span class="dot"></span>Long-Term Manufacturing Partner</div>
         </div>
-        <div class="care-stickers">
-          <div class="care-sticker c1"><div class="big-letter">C</div><div class="lbl">Competence</div></div>
-          <div class="care-sticker c2"><div class="big-letter">A</div><div class="lbl">Accountability</div></div>
-          <div class="care-sticker c3"><div class="big-letter">R</div><div class="lbl">Resilience</div></div>
-          <div class="care-sticker c4"><div class="big-letter">E</div><div class="lbl">Excellence</div></div>
-        </div>
+        <div class="verified">✅ Verified Client</div>
+      </div>
+      <div class="chat-body">
+        <div class="bubble in">"United Royale's people feel like an extension of our own team — reliable, well-screened, zero drama." 💬</div>
+        <div class="bubble-time">2:41 PM</div>
+        <div class="bubble out">🙌 That means everything to us — thank you for trusting Royale with your team!</div>
+        <div class="bubble-time out">2:43 PM · Royale Team</div>
       </div>
     </div>
   </div></section>
 
-  <section class="quote-band"><div class="wrap quote-split">
-    <div class="quote-photo">
-      <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=520&q=80&auto=format&fit=crop" alt="Smiling corporate partner discussing feedback on United Royale's staffing support" style="object-position:center 35%;">
-      <div class="qmark">"</div>
-    </div>
-    <div class="quote-copy">
-      <span class="big-quote-mark">"</span>
-      <p class="pull-line">United Royale's people feel like an extension of our own team — reliable, well-screened, zero drama.</p>
-      <div class="who">Operations Manager · Long-Term Manufacturing Partner 💬</div>
-    </div>
-  </div></section>
-
-  <section class="teaser-band" id="careers"><div class="wrap">
-    <div class="sec-head" style="margin-bottom:24px;">
+  <section class="highlights" id="careers"><div class="wrap">
+    <div class="hl-head">
       <div class="kicker">stay in the loop</div>
       <h2>Careers, wins &amp; <span class="grad-text">HR tea</span> ☕</h2>
     </div>
-    <div class="teaser-card">
-      <div class="teaser-item"><span class="badge">🙌</span><h3>We're Hiring</h3><p>Newly grads &amp; seasoned pros welcome — come build with us.</p></div>
-      <div class="teaser-item"><span class="badge">🎉</span><h3>26 Years &amp; Counting</h3><p>From one Makati office to three cities — still growing.</p></div>
-      <div class="teaser-item"><span class="badge">💡</span><h3>Why Outsourcing Hits Different</h3><p>A quick read on freeing up your core team to focus on the big stuff.</p></div>
+    <div class="hl-row">
+      <div class="hl-item"><div class="hl-circle c1">🙌</div><h5>We're Hiring</h5><p>Newly grads &amp; seasoned pros welcome — come build with us.</p></div>
+      <div class="hl-item"><div class="hl-circle c2">🎉</div><h5>26 Years &amp; Counting</h5><p>From one Makati office to three cities — still growing.</p></div>
+      <div class="hl-item"><div class="hl-circle c3">💡</div><h5>Why Outsourcing Hits Different</h5><p>Freeing up your core team to focus on the big stuff.</p></div>
     </div>
   </div></section>
 
-  <section class="cta-big"><div class="wrap">
-    <div class="cta-card">
-      <h2>Ready to build a team that <span style="text-decoration:underline;">just works</span>?</h2>
-      <p>Let's talk staffing — no stiff sales pitch, just solutions.</p>
-      <a class="btn-neon">Let's Get Staffed 👑</a>
-    </div>
+  <section class="cta-banner"><div class="wrap">
+    <h2>Ready to build a team that <span style="text-decoration:underline;">just works</span>?</h2>
+    <p>Let's talk staffing — no stiff sales pitch, just solutions.</p>
+    <a class="btn-neon">Let's Get Staffed 👑</a>
   </div></section>
 
-  <section class="contact-band" id="contact"><div class="wrap">
-    <div class="contact-card">
-      <div>
-        <h3>Slide into our <span class="grad-text">inbox</span></h3>
-        <p style="color:var(--muted); font-size:14px; line-height:1.6;">Head Office: Unit 605, Timstate Building, Makati City 🇵🇭</p>
-        <div class="loc-timeline">
-          <div class="loc-item"><div class="loc-name">📍 Makati (Head Office)</div><div class="loc-addr">Timstate Building, Brgy. Bangkal</div></div>
-          <div class="loc-item"><div class="loc-name">📍 Alaminos City</div><div class="loc-addr">Pangasinan</div></div>
-          <div class="loc-item"><div class="loc-name">📍 Pasig</div><div class="loc-addr">Renaissance Center, Ugong</div></div>
-        </div>
-        <div class="contact-list">
-          <div class="row2"><div class="ic">📞</div>(02) 8 852-0651</div>
-          <div class="row2"><div class="ic">✉️</div>unitedroyalecorporation@gmail.com</div>
-          <div class="row2"><div class="ic">⏰</div>Mon–Fri, 9AM–6PM</div>
-        </div>
-      </div>
-      <div class="contact-form">
-        <span class="field-lbl">Your name</span><input placeholder="who's this?">
-        <span class="field-lbl">Email</span><input placeholder="you@company.com">
-        <span class="field-lbl">What do you need staffed?</span><textarea rows="3" placeholder="tell us the mission..."></textarea>
-        <a class="btn-neon" style="display:block; text-align:center; margin-top:6px;">Send it 👑</a>
-      </div>
+  <section class="contact-center" id="contact"><div class="wrap">
+    <h3>Slide into our <span class="grad-text">inbox</span></h3>
+    <p>Three offices, one team ready to help — reach out and we'll staff it right.</p>
+    <div class="office-pills">
+      <span class="office-pill">📍 Makati (Head Office)</span>
+      <span class="office-pill">📍 Alaminos City, Pangasinan</span>
+      <span class="office-pill">📍 Pasig — Renaissance Center</span>
+    </div>
+    <div class="info-row">
+      <div class="row2">📞 (02) 8 852-0651</div>
+      <div class="row2">✉️ unitedroyalecorporation@gmail.com</div>
+      <div class="row2">⏰ Mon–Fri, 9AM–6PM</div>
+    </div>
+    <div class="contact-form-center">
+      <span class="field-lbl">Your name</span><input placeholder="who's this?">
+      <span class="field-lbl">Email</span><input placeholder="you@company.com">
+      <span class="field-lbl">What do you need staffed?</span><textarea rows="3" placeholder="tell us the mission..."></textarea>
+      <a class="btn-neon" style="display:block; text-align:center; margin-top:6px;">Send it 👑</a>
     </div>
   </div></section>
 
