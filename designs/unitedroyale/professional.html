@@ -4,252 +4,358 @@
 <meta charset="UTF-8">
 <title>United Royale Corporation — Modern Professional Concept</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --royal:#3B1F6B;
-    --royal-2:#4E2A8C;
-    --gold:#D4AF37;
-    --gold-2:#E8CA6B;
-    --cream:#FAF7F1;
-    --ink:#20172F;
-    --muted:#645C78;
-    --line:#E7E1F0;
+    --navy:#262d73;
+    --navy-2:#333d94;
+    --navy-deep:#1a1f52;
+    --navy-tint:#eef0f9;
+    --brick:#982b1a;
+    --brick-2:#b8402c;
+    --brick-tint:#fbece7;
+    --paper:#ffffff;
+    --ink:#1a1c2b;
+    --muted:#5c5f72;
+    --line:#e4e6f0;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  body{font-family:'Inter',sans-serif; background:var(--cream); color:var(--ink); -webkit-font-smoothing:antialiased;}
-  h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;}
+  body{font-family:'Inter',sans-serif; background:var(--paper); color:var(--ink); -webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.serif{font-family:'Newsreader',serif;}
   .wrap{max-width:1200px; margin:0 auto; padding:0 40px;}
   a{color:inherit; text-decoration:none;}
+  img{display:block;}
 
-  .topbar{background:var(--royal); color:#d8cdf0; font-size:12.5px;}
+  .topbar{background:var(--navy-deep); color:#c6cbea; font-size:12.5px;}
   .topbar .wrap{display:flex; justify-content:space-between; align-items:center; padding:9px 40px;}
-  .topbar span{margin-right:20px; opacity:.9;}
+  .topbar span{margin-right:22px; opacity:.92;}
 
-  header.nav{background:#fff; border-bottom:1px solid var(--line);}
-  .nav .wrap{display:flex; align-items:center; justify-content:space-between; padding:22px 40px;}
+  header.nav{background:#fff; border-bottom:1px solid var(--line); position:relative; z-index:20;}
+  .nav .wrap{display:flex; align-items:center; justify-content:space-between; padding:20px 40px;}
   .brand{display:flex; align-items:center; gap:12px;}
-  .brand .mark{width:46px; height:46px; border-radius:50%; background:linear-gradient(150deg,var(--royal),var(--royal-2)); display:flex; align-items:center; justify-content:center; color:var(--gold-2); border:2px solid var(--gold);}
-  .brand .name{font-family:'Cormorant Garamond',serif; font-weight:700; font-size:20px; color:var(--royal); line-height:1.15;}
-  .brand .name small{display:block; font-family:'Inter',sans-serif; font-weight:600; font-size:10px; letter-spacing:.14em; color:var(--gold); text-transform:uppercase; margin-top:3px;}
-  nav.links{display:flex; gap:34px; font-size:14.5px; font-weight:600; color:#3a3050;}
-  .cta-btn{background:var(--royal); color:#fff; padding:12px 26px; border-radius:6px; font-weight:700; font-size:14px; border:1px solid var(--royal);}
-  .cta-btn.gold{background:var(--gold); border-color:var(--gold); color:var(--royal);}
+  .brand .mark{width:44px; height:44px; border-radius:11px; background:linear-gradient(150deg,var(--navy),var(--navy-2)); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .brand .mark svg{width:24px; height:24px; color:#fff;}
+  .brand .name{font-family:'Newsreader',serif; font-weight:700; font-size:19px; color:var(--navy); line-height:1.15;}
+  .brand .name small{display:block; font-family:'Inter',sans-serif; font-weight:700; font-size:10px; letter-spacing:.12em; color:var(--brick); text-transform:uppercase; margin-top:4px;}
+  nav.links{display:flex; gap:30px; font-size:14px; font-weight:600; color:#33364a;}
+  .cta-btn{background:var(--brick); color:#fff; padding:12px 24px; border-radius:8px; font-weight:700; font-size:13.5px; white-space:nowrap;}
+  .cta-btn.outline{background:transparent; border:1.5px solid var(--navy); color:var(--navy);}
+  .cta-btn.navy{background:var(--navy); color:#fff;}
 
-  .hero{position:relative; background:radial-gradient(1100px 500px at 85% -10%, #5a34a3 0%, var(--royal) 55%, #1c1035 100%); color:#fff; overflow:hidden;}
-  .hero .wrap{padding:96px 40px 100px; display:grid; grid-template-columns:1.1fr .9fr; gap:60px; align-items:center; position:relative; z-index:2;}
-  .eyebrow{display:inline-flex; align-items:center; gap:10px; font-size:12.5px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--gold-2); border:1px solid rgba(232,202,107,.4); padding:8px 16px; border-radius:30px; margin-bottom:26px;}
-  .hero h1{font-size:50px; line-height:1.15; font-weight:700; margin-bottom:22px;}
-  .hero h1 em{font-style:italic; color:var(--gold-2);}
-  .hero p{font-size:16.5px; line-height:1.7; color:#d9cfec; max-width:500px; margin-bottom:32px;}
-  .hero-actions{display:flex; gap:14px;}
-  .btn-gold{background:var(--gold); color:var(--royal); padding:14px 28px; border-radius:6px; font-weight:700; font-size:14.5px;}
-  .btn-outline{border:1.5px solid rgba(255,255,255,.5); color:#fff; padding:14px 28px; border-radius:6px; font-weight:600; font-size:14.5px;}
-  .hero-stats{display:flex; gap:34px; margin-top:52px; padding-top:30px; border-top:1px solid rgba(255,255,255,.14);}
-  .hero-stats div{font-size:12.5px; color:#c3b6de;}
-  .hero-stats strong{display:block; font-family:'Cormorant Garamond',serif; font-size:26px; color:#fff; font-weight:700;}
+  .hero{background:var(--navy-tint); position:relative; overflow:hidden;}
+  .hero .wrap{padding:84px 40px 96px; display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center; position:relative; z-index:2;}
+  .eyebrow{display:inline-flex; align-items:center; gap:9px; font-size:12.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--brick); background:var(--brick-tint); padding:8px 16px; border-radius:30px; margin-bottom:24px;}
+  .hero h1{font-size:46px; line-height:1.18; font-weight:700; color:var(--navy); margin-bottom:20px;}
+  .hero h1 span{color:var(--brick);}
+  .hero p{font-size:16px; line-height:1.7; color:var(--muted); max-width:520px; margin-bottom:30px;}
+  .hero-actions{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn-primary{background:var(--brick); color:#fff; padding:14px 26px; border-radius:8px; font-weight:700; font-size:14.5px;}
+  .btn-outline{border:1.5px solid var(--navy); color:var(--navy); padding:14px 26px; border-radius:8px; font-weight:700; font-size:14.5px;}
+  .hero-stats{display:flex; gap:30px; margin-top:44px; padding-top:26px; border-top:1px solid #d7dbf0; flex-wrap:wrap;}
+  .hero-stats div{font-size:12.5px; color:var(--muted);}
+  .hero-stats strong{display:block; font-family:'Newsreader',serif; font-size:25px; color:var(--navy); font-weight:700;}
 
-  .crest-visual{position:relative; height:400px;}
-  .crest{position:absolute; top:0; right:0; width:270px; height:270px; border-radius:50%; border:1.5px dashed rgba(232,202,107,.5); display:flex; align-items:center; justify-content:center;}
-  .crest-inner{width:210px; height:210px; border-radius:50%; background:linear-gradient(160deg,#4E2A8C,#2a1653); border:1px solid rgba(232,202,107,.4); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; box-shadow:0 30px 60px -20px rgba(0,0,0,.6);}
-  .crest-inner svg{width:52px; height:52px; margin-bottom:10px; color:var(--gold-2);}
-  .crest-inner .est{font-family:'Cormorant Garamond',serif; font-size:15px; color:var(--gold-2); letter-spacing:.05em;}
-  .crest-inner .yr{font-size:10.5px; color:#c3b6de; letter-spacing:.12em; margin-top:4px;}
-  .float-card{position:absolute; bottom:10px; left:0; background:#fff; color:var(--ink); border-radius:10px; padding:20px 22px; width:260px; box-shadow:0 30px 60px -15px rgba(0,0,0,.35);}
-  .float-card .row{display:flex; align-items:center; gap:10px; margin-bottom:12px;}
+  .hero-visual{position:relative; height:420px;}
+  .hero-photo{position:absolute; right:0; top:10px; width:88%; height:380px; border-radius:22px; overflow:hidden; box-shadow:0 34px 60px -22px rgba(38,45,115,.38);}
+  .hero-photo img{width:100%; height:100%; object-fit:cover;}
+  .crown-badge{position:absolute; top:-14px; left:10px; width:70px; height:70px; border-radius:50%; background:var(--navy); border:4px solid #fff; display:flex; align-items:center; justify-content:center; box-shadow:0 12px 26px -6px rgba(38,45,115,.45); z-index:3;}
+  .crown-badge svg{width:30px; height:30px; color:#fff;}
+  .float-card{position:absolute; bottom:-22px; left:-6px; background:#fff; color:var(--ink); border-radius:12px; padding:18px 20px; width:250px; box-shadow:0 28px 55px -18px rgba(38,45,115,.3); z-index:3;}
+  .float-card .row{display:flex; align-items:center; gap:11px; margin-bottom:12px;}
   .float-card .row:last-child{margin-bottom:0;}
-  .float-card .dot{width:34px; height:34px; border-radius:8px; background:#F1EBFA; display:flex; align-items:center; justify-content:center; color:var(--royal); flex-shrink:0; font-size:15px;}
-  .float-card .t{font-size:13px; font-weight:700; color:var(--royal);}
-  .float-card .s{font-size:11.5px; color:var(--muted);}
+  .float-card .dot{width:34px; height:34px; border-radius:8px; background:var(--brick-tint); display:flex; align-items:center; justify-content:center; color:var(--brick); flex-shrink:0;}
+  .float-card .dot svg{width:17px; height:17px;}
+  .float-card .t{font-size:12.5px; font-weight:700; color:var(--navy);}
+  .float-card .s{font-size:11px; color:var(--muted);}
 
-  section{padding:88px 0;}
-  .kicker{font-size:12.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); margin-bottom:14px;}
-  .sec-head{max-width:640px; margin:0 auto 52px; text-align:center;}
-  .sec-head h2{font-size:36px; color:var(--royal); font-weight:700; line-height:1.25;}
+  section{padding:84px 0;}
+  .kicker{font-size:12.5px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--brick); margin-bottom:14px;}
+  .sec-head{max-width:660px; margin:0 auto 50px; text-align:center;}
+  .sec-head h2{font-size:34px; color:var(--navy); font-weight:700; line-height:1.25;}
   .sec-head p{color:var(--muted); font-size:15.5px; margin-top:14px; line-height:1.7;}
 
-  .care-row{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
-  .care-card{background:#fff; border:1px solid var(--line); border-radius:16px; padding:32px 22px; text-align:center;}
-  .care-card .letter{width:60px; height:60px; border-radius:50%; background:linear-gradient(150deg,var(--royal),var(--royal-2)); color:var(--gold-2); font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:700; display:flex; align-items:center; justify-content:center; margin:0 auto 18px; border:2px solid var(--gold);}
-  .care-card h3{font-family:'Inter',sans-serif; font-size:15.5px; font-weight:800; color:var(--royal); margin-bottom:8px; letter-spacing:.03em;}
-  .care-card p{font-size:12.5px; color:var(--muted); line-height:1.6;}
+  .logo-strip{background:#fff; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:30px 0;}
+  .logo-strip .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px 0;}
+  .logo-strip span{font-size:12.5px; font-weight:700; letter-spacing:.05em; color:var(--muted);}
+  .logo-strip span:first-child{color:var(--navy);}
 
-  .services-band{background:#fff;}
-  .services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
-  .scard{background:var(--cream); border:1px solid var(--line); border-radius:14px; padding:28px 24px;}
-  .scard .icon{width:48px; height:48px; border-radius:10px; background:#EFE7FB; color:var(--royal); display:flex; align-items:center; justify-content:center; margin-bottom:18px; font-size:20px;}
-  .scard h3{font-family:'Inter',sans-serif; font-size:15.5px; font-weight:700; color:var(--royal); margin-bottom:8px;}
-  .scard p{font-size:13px; color:var(--muted); line-height:1.6;}
+  .stats-band{background:var(--navy); color:#fff;}
+  .stat-row{display:grid; grid-template-columns:repeat(4,1fr); gap:22px; text-align:center;}
+  .stat-card{padding:6px 10px;}
+  .stat-card .bar{width:34px; height:3px; background:var(--brick-2); margin:0 auto 16px; border-radius:2px;}
+  .stat-card .num{font-family:'Newsreader',serif; font-size:38px; font-weight:700; color:#fff;}
+  .stat-card .lab{font-size:12.5px; color:#c6cbea; margin-top:8px; line-height:1.5;}
 
-  .philosophy{background:linear-gradient(120deg,var(--royal),#2a1653); color:#fff;}
-  .phil-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;}
-  .phil-grid h2{font-size:32px; font-weight:700; margin-bottom:18px;}
-  .phil-grid p{color:#d9cfec; font-size:15.5px; line-height:1.75;}
-  .phil-quote{background:rgba(255,255,255,.06); border:1px solid rgba(232,202,107,.3); border-radius:16px; padding:36px;}
-  .phil-quote svg{width:34px; height:34px; color:var(--gold-2); margin-bottom:18px;}
-  .phil-quote p{font-family:'Cormorant Garamond',serif; font-size:22px; font-style:italic; color:#fff; line-height:1.5;}
+  .cat-block{margin-bottom:44px;}
+  .cat-block:last-child{margin-bottom:0;}
+  .cat-head{display:flex; align-items:center; gap:14px; margin-bottom:22px;}
+  .cat-head .cnum{width:38px; height:38px; border-radius:10px; background:var(--navy-tint); color:var(--navy); font-weight:800; font-size:14px; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .cat-head h3{font-size:19px; font-weight:700; color:var(--navy); font-family:'Inter',sans-serif;}
+  .cat-head p{font-size:13.5px; color:var(--muted); margin-top:2px;}
+  .svc-grid{display:grid; gap:18px;}
+  .svc-grid.cols-3{grid-template-columns:repeat(3,1fr);}
+  .svc-grid.cols-4{grid-template-columns:repeat(4,1fr);}
+  .svc-grid.cols-2{grid-template-columns:repeat(2,1fr);}
+  .scard{background:#fff; border:1px solid var(--line); border-radius:14px; padding:24px 22px;}
+  .scard .icon{width:44px; height:44px; border-radius:10px; background:var(--navy-tint); color:var(--navy); display:flex; align-items:center; justify-content:center; margin-bottom:16px;}
+  .scard .icon svg{width:21px; height:21px;}
+  .scard h4{font-size:14.5px; font-weight:700; color:var(--navy); margin-bottom:7px; font-family:'Inter',sans-serif;}
+  .scard p{font-size:12.5px; color:var(--muted); line-height:1.6;}
+  .scard.feature{padding:30px 26px;}
+  .scard.feature .icon{width:52px; height:52px; background:var(--brick-tint); color:var(--brick);}
+  .scard.feature .icon svg{width:24px; height:24px;}
+  .scard.feature h4{font-size:16.5px;}
+  .scard.feature p{font-size:13.5px;}
 
-  .locations{background:var(--cream);}
-  .loc-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
-  .loc-card{background:#fff; border:1px solid var(--line); border-radius:14px; padding:28px 24px;}
-  .loc-card .tag{font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--gold); margin-bottom:10px;}
-  .loc-card h3{font-family:'Inter',sans-serif; font-size:15.5px; font-weight:700; color:var(--royal); margin-bottom:10px;}
-  .loc-card p{font-size:13px; color:var(--muted); line-height:1.65;}
+  .about-band{background:var(--navy-tint);}
+  .about-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:start;}
+  .about-copy h2{font-size:32px; color:var(--navy); font-weight:700; margin-bottom:18px; line-height:1.25;}
+  .about-copy p{color:var(--muted); font-size:15px; line-height:1.75; margin-bottom:16px;}
+  .about-copy p:last-child{margin-bottom:0;}
+  .mv-stack{display:flex; flex-direction:column; gap:18px;}
+  .mv-card{background:#fff; border:1px solid var(--line); border-radius:14px; padding:26px;}
+  .mv-card .tag{font-size:11px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--brick); margin-bottom:10px;}
+  .mv-card p{font-size:13.5px; color:var(--muted); line-height:1.65;}
 
-  .cta-band{background:var(--royal); color:#fff;}
-  .cta-band .wrap{display:flex; align-items:center; justify-content:space-between; padding:60px 40px;}
-  .cta-band h3{font-family:'Cormorant Garamond',serif; font-size:30px; font-weight:700; max-width:480px;}
-  .cta-band p{color:#d9cfec; margin-top:10px; font-size:14.5px;}
+  .care-row{display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-top:44px;}
+  .care-card{background:#fff; border:1px solid var(--line); border-radius:14px; padding:26px 18px; text-align:center;}
+  .care-card .letter{width:52px; height:52px; border-radius:50%; background:linear-gradient(150deg,var(--navy),var(--navy-2)); color:#fff; font-family:'Newsreader',serif; font-size:22px; font-weight:700; display:flex; align-items:center; justify-content:center; margin:0 auto 14px;}
+  .care-card h4{font-family:'Inter',sans-serif; font-size:14px; font-weight:800; color:var(--navy); margin-bottom:7px;}
+  .care-card p{font-size:12px; color:var(--muted); line-height:1.55;}
 
-  .contact-grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:60px; align-items:start;}
-  .info-item{display:flex; gap:16px; margin-bottom:24px;}
-  .info-item .ic{width:44px; height:44px; border-radius:9px; background:#EFE7FB; color:var(--royal); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
-  .info-item h4{font-size:14.5px; font-weight:700; color:var(--royal); margin-bottom:4px;}
+  .quote-sec{background:#fff;}
+  .quote-grid{display:grid; grid-template-columns:.85fr 1.15fr; gap:50px; align-items:center;}
+  .quote-photo{border-radius:18px; overflow:hidden; box-shadow:0 24px 50px -20px rgba(38,45,115,.3);}
+  .quote-photo img{width:100%; height:340px; object-fit:cover;}
+  .quote-box svg{width:32px; height:32px; color:var(--brick); margin-bottom:18px;}
+  .quote-box p{font-family:'Newsreader',serif; font-size:23px; font-style:italic; color:var(--navy); line-height:1.5; margin-bottom:20px;}
+  .quote-box .who{font-size:13.5px; font-weight:700; color:var(--ink);}
+  .quote-box .who span{display:block; font-weight:500; color:var(--muted); font-size:12.5px; margin-top:2px;}
+
+  .teaser-band{background:var(--navy-tint);}
+  .teaser-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .teaser-card{background:#fff; border:1px solid var(--line); border-radius:16px; padding:26px 24px; display:flex; flex-direction:column;}
+  .teaser-card .tag{font-size:11px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--brick); margin-bottom:12px;}
+  .teaser-card h4{font-size:16px; font-weight:700; color:var(--navy); margin-bottom:10px; font-family:'Inter',sans-serif;}
+  .teaser-card p{font-size:13px; color:var(--muted); line-height:1.6; flex-grow:1; margin-bottom:16px;}
+  .teaser-card a.link{font-size:13px; font-weight:700; color:var(--brick);}
+
+  .cta-band{background:linear-gradient(120deg,var(--navy),var(--navy-deep)); color:#fff;}
+  .cta-band .wrap{display:flex; align-items:center; justify-content:space-between; padding:56px 40px; flex-wrap:wrap; gap:24px;}
+  .cta-band h3{font-family:'Newsreader',serif; font-size:29px; font-weight:700; max-width:480px;}
+  .cta-band p{color:#c6cbea; margin-top:10px; font-size:14.5px;}
+  .cta-band .actions{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn-white{background:#fff; color:var(--navy); padding:14px 26px; border-radius:8px; font-weight:700; font-size:14.5px;}
+
+  .contact-grid{display:grid; grid-template-columns:.95fr 1.05fr; gap:56px; align-items:start;}
+  .loc-row{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:34px;}
+  .loc-card{background:var(--navy-tint); border-radius:12px; padding:18px 18px;}
+  .loc-card .tag{font-size:10.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--brick); margin-bottom:8px;}
+  .loc-card h4{font-size:13.5px; font-weight:700; color:var(--navy); margin-bottom:7px; font-family:'Inter',sans-serif;}
+  .loc-card p{font-size:12px; color:var(--muted); line-height:1.55;}
+  .info-item{display:flex; gap:16px; margin-bottom:20px;}
+  .info-item .ic{width:42px; height:42px; border-radius:9px; background:var(--navy-tint); color:var(--navy); display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+  .info-item .ic svg{width:19px; height:19px;}
+  .info-item h4{font-size:14px; font-weight:700; color:var(--navy); margin-bottom:4px;}
   .info-item p{font-size:13px; color:var(--muted); line-height:1.6;}
-  .form-card{background:#fff; border:1px solid var(--line); border-radius:14px; padding:36px; box-shadow:0 30px 60px -30px rgba(59,31,107,.2);}
-  .form-card label{font-size:12.5px; font-weight:700; color:var(--royal); display:block; margin-bottom:8px; text-transform:uppercase; letter-spacing:.04em;}
-  .form-card .field{border:1px solid var(--line); border-radius:8px; padding:14px 16px; font-size:14px; color:var(--muted); margin-bottom:18px; background:#FBFAF6;}
-  .form-card .field.area{height:96px;}
+  .form-card{background:var(--navy-tint); border:1px solid var(--line); border-radius:14px; padding:34px; box-shadow:0 30px 60px -30px rgba(38,45,115,.2);}
+  .form-card label{font-size:12px; font-weight:700; color:var(--navy); display:block; margin-bottom:8px; text-transform:uppercase; letter-spacing:.04em;}
+  .form-card .field{border:1px solid var(--line); border-radius:8px; padding:13px 16px; font-size:14px; color:var(--muted); margin-bottom:16px; background:#fff;}
+  .form-card .field.area{height:90px;}
 
-  footer{background:#1c1035; color:#a99cc9; padding:60px 0 30px;}
-  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,.08);}
+  footer{background:var(--navy-deep); color:#a6acd6; padding:56px 0 28px;}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-bottom:36px; border-bottom:1px solid rgba(255,255,255,.12);}
   .foot-grid h5{color:#fff; font-size:13.5px; font-weight:700; margin-bottom:16px;}
-  .foot-grid p, .foot-grid li{font-size:13px; line-height:2; color:#a99cc9; list-style:none;}
-  .foot-bottom{display:flex; justify-content:space-between; padding-top:26px; font-size:12.5px; color:#6f5f92;}
+  .foot-grid p, .foot-grid li{font-size:13px; line-height:2; color:#a6acd6; list-style:none;}
+  .foot-cta{display:inline-block; margin-top:14px;}
+  .foot-bottom{display:flex; justify-content:space-between; padding-top:24px; font-size:12.5px; color:#6f76a8; flex-wrap:wrap; gap:8px;}
 </style>
 </head>
 <body>
 
   <div class="topbar"><div class="wrap">
-    <div><span>📍 Makati · Pangasinan · Pasig</span><span>📞 (02) 8 852-0651</span></div>
+    <div><span>Makati · Pangasinan · Pasig</span><span>(02) 8 852-0651</span></div>
     <div>unitedroyalecorporation@gmail.com</div>
   </div></div>
 
   <header class="nav"><div class="wrap">
     <div class="brand">
-      <div class="mark">👑</div>
-      <div class="name">United Royale<small>Corporation · HR Solutions</small></div>
+      <div class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8l4 3 5-7 5 7 4-3-2 11H5L3 8z"/></svg></div>
+      <div class="name">United Royale<small>Corporation · HR &amp; Manpower Solutions</small></div>
     </div>
-    <nav class="links"><a>About</a><a>Services</a><a>Core Values</a><a>Locations</a><a>Contact</a></nav>
-    <a class="cta-btn gold">Partner With Us</a>
+    <nav class="links"><a>About</a><a>Services</a><a>Achievements</a><a>Careers</a><a>Contact</a></nav>
+    <a class="cta-btn">Request a Consultation</a>
   </div></header>
 
-  <section class="hero" style="padding:0;">
+  <section class="hero">
     <div class="wrap">
       <div>
-        <div class="eyebrow">👑 Premier HR Service Provider</div>
-        <h1>Human resources support<br>that <em>exceeds</em> expectations.</h1>
-        <p>United Royale Corporation delivers manpower and business support solutions built on the belief that human capital is a company's most valuable asset — for partners nationwide.</p>
+        <div class="eyebrow">DOLE-Registered Since 2000</div>
+        <h1>Dependable manpower solutions, <span>trusted for over two decades.</span></h1>
+        <p>United Royale Corporation has spent more than 20 years delivering quality-driven manpower and business-support solutions to partners nationwide — pairing rigorous, DOLE-compliant screening with a genuine, long-term commitment to every partnership we build.</p>
         <div class="hero-actions">
-          <a class="btn-gold">Request a Proposal →</a>
+          <a class="btn-primary">Request a Proposal →</a>
           <a class="btn-outline">View Our Services</a>
         </div>
         <div class="hero-stats">
-          <div><strong>9</strong>Service Lines</div>
-          <div><strong>3</strong>Regional Offices</div>
-          <div><strong>C.A.R.E</strong>Core Values Framework</div>
-          <div><strong>100%</strong>Partner-First Delivery</div>
+          <div><strong>26 Yrs</strong>Industry Experience</div>
+          <div><strong>1,200+</strong>Personnel Deployed</div>
+          <div><strong>150+</strong>Corporate Clients</div>
+          <div><strong>10+</strong>Sectors Supported</div>
         </div>
       </div>
-      <div class="crest-visual">
-        <div class="crest"><div class="crest-inner">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 8l4 3 5-7 5 7 4-3-2 11H5L3 8z"/></svg>
-          <div class="est">URC</div>
-          <div class="yr">WE CARE</div>
-        </div></div>
+      <div class="hero-visual">
+        <div class="crown-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8l4 3 5-7 5 7 4-3-2 11H5L3 8z"/></svg></div>
+        <div class="hero-photo"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=760&q=80&auto=format&fit=crop" alt="United Royale Corporation personnel collaborating during a business operations meeting"></div>
         <div class="float-card">
-          <div class="row"><div class="dot">🛠</div><div><div class="t">Full Manpower Support</div><div class="s">9 specialized service lines</div></div></div>
-          <div class="row"><div class="dot">🏢</div><div><div class="t">Multi-Region Coverage</div><div class="s">Makati · Pangasinan · Pasig</div></div></div>
+          <div class="row"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div><div><div class="t">Full Manpower Support</div><div class="s">9 specialized service lines</div></div></div>
+          <div class="row"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M6 21V9l6-5 6 5v12M10 21v-6h4v6"/></svg></div><div><div class="t">Multi-Region Coverage</div><div class="s">Makati · Pangasinan · Pasig</div></div></div>
         </div>
       </div>
     </div>
   </section>
+
+  <div class="logo-strip"><div class="wrap">
+    <span>TRUSTED ACROSS INDUSTRIES</span><span>MANUFACTURING</span><span>BPO &amp; SHARED SERVICES</span><span>RETAIL &amp; REAL ESTATE</span><span>BANKING &amp; FINANCE</span><span>LOGISTICS</span><span>GOVERNMENT</span>
+  </div></div>
+
+  <section class="stats-band"><div class="wrap">
+    <div class="stat-row">
+      <div class="stat-card"><div class="bar"></div><div class="num">26</div><div class="lab">Years serving partners<br>since incorporation in 2000</div></div>
+      <div class="stat-card"><div class="bar"></div><div class="num">1,200+</div><div class="lab">Skilled personnel deployed<br>nationwide, year-round</div></div>
+      <div class="stat-card"><div class="bar"></div><div class="num">150+</div><div class="lab">Corporate clients served<br>across the Philippines</div></div>
+      <div class="stat-card"><div class="bar"></div><div class="num">10+</div><div class="lab">Industry sectors<br>actively supported</div></div>
+    </div>
+  </div></section>
 
   <section>
     <div class="wrap">
       <div class="sec-head">
-        <div class="kicker" style="text-align:center;">Our Core Values</div>
-        <h2>WE CARE — the standard behind every partnership</h2>
-        <p>Every engagement is guided by a values framework designed to preserve long-term partner relationships.</p>
-      </div>
-      <div class="care-row">
-        <div class="care-card"><div class="letter">C</div><h3>Competence</h3><p>Skilled personnel trained to deliver reliable, professional results.</p></div>
-        <div class="care-card"><div class="letter">A</div><h3>Accountability</h3><p>Ownership of outcomes at every level of service delivery.</p></div>
-        <div class="care-card"><div class="letter">R</div><h3>Resilience</h3><p>Consistent, dependable support through every business challenge.</p></div>
-        <div class="care-card"><div class="letter">E</div><h3>Excellence</h3><p>A relentless standard of quality across all service lines.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="services-band">
-    <div class="wrap">
-      <div class="sec-head">
         <div class="kicker" style="text-align:center;">Strategic Services Solutions</div>
-        <h2>A full spectrum of manpower &amp; business support</h2>
+        <h2>A full spectrum of manpower &amp; business support, grouped for clarity</h2>
+        <p>Nine specialized service lines organized into four practical categories — each staffed by trained, DOLE-compliant personnel built for reliable, long-term deployment.</p>
       </div>
-      <div class="services-grid">
-        <div class="scard"><div class="icon">🧹</div><h3>Janitorial &amp; Maintenance</h3><p>Trained facility personnel to keep operations clean and running smoothly.</p></div>
-        <div class="scard"><div class="icon">🛵</div><h3>Messengerial Services</h3><p>Reliable dispatch and courier personnel for daily business errands.</p></div>
-        <div class="scard"><div class="icon">🗂</div><h3>Administrative Support</h3><p>Skilled admin staff to keep back-office operations organized.</p></div>
-        <div class="scard"><div class="icon">💳</div><h3>HR &amp; Billing</h3><p>Dedicated personnel for payroll, billing, and HR process support.</p></div>
-        <div class="scard"><div class="icon">🖊</div><h3>Secretarial &amp; Executive Support</h3><p>Professional support staff for executives and leadership teams.</p></div>
-        <div class="scard"><div class="icon">💻</div><h3>Encoders &amp; Dealer Coordination</h3><p>Accurate data encoding and dealer coordination personnel.</p></div>
-        <div class="scard"><div class="icon">📞</div><h3>Telemarketing &amp; Telesales</h3><p>Trained agents for telesales, telemarketing, and money-sorting tasks.</p></div>
-        <div class="scard"><div class="icon">🔍</div><h3>Credit Investigation</h3><p>Diligent personnel for credit verification and investigation work.</p></div>
-        <div class="scard"><div class="icon">🧑‍💼</div><h3>Other Utility Personnel</h3><p>Flexible utility staffing tailored to your operational needs.</p></div>
+
+      <div class="cat-block">
+        <div class="cat-head"><div class="cnum">01</div><div><h3>Facilities &amp; Support Staff</h3><p>Keep operations clean, moving, and covered — every day.</p></div></div>
+        <div class="svc-grid cols-3">
+          <div class="scard"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M10 3l1.4 3.6L15 8l-3.6 1.4L10 13l-1.4-3.6L5 8l3.6-1.4L10 3z"/><path d="M18 13l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8.8-2z"/></svg></div><h4>Janitorial &amp; Maintenance</h4><p>Trained facility personnel who keep your premises clean and running smoothly.</p></div>
+          <div class="scard"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="5.5" cy="17.5" r="2.5"/><circle cx="18.5" cy="17.5" r="2.5"/><path d="M15 6h4l3 6h-6M15 6L9 9l-3 6h9M9 9l3 3"/></svg></div><h4>Messengerial Services</h4><p>Reliable dispatch and courier personnel for time-sensitive business errands.</p></div>
+          <div class="scard"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="3.2"/><path d="M4 21c0-3.8 3.6-6.8 8-6.8s8 3 8 6.8"/></svg></div><h4>Other Utility Personnel</h4><p>Flexible general-utility staffing tailored to your day-to-day operational needs.</p></div>
+        </div>
+      </div>
+
+      <div class="cat-block">
+        <div class="cat-head"><div class="cnum">02</div><div><h3>Administrative &amp; Back-Office</h3><p>Organized, accurate support behind the scenes.</p></div></div>
+        <div class="svc-grid cols-4">
+          <div class="scard"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></div><h4>Administrative Support</h4><p>Skilled admin staff who keep back-office workflows organized.</p></div>
+          <div class="scard"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg></div><h4>HR &amp; Billing</h4><p>Dedicated personnel for payroll processing, billing, and HR support tasks.</p></div>
+          <div class="scard"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M9 12h6M9 16h6"/></svg></div><h4>Secretarial &amp; Exec Support</h4><p>Professional support staff dedicated to executives and leadership teams.</p></div>
+          <div class="scard"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><h4>Encoders &amp; Dealer Coordination</h4><p>Accurate data-encoding and dealer-coordination personnel you can rely on.</p></div>
+        </div>
+      </div>
+
+      <div class="cat-block">
+        <div class="cat-head" style="margin-bottom:20px;"><div><div class="kicker" style="margin-bottom:6px;">03 &amp; 04 — Focused Specialty Lines</div></div></div>
+        <div class="svc-grid cols-2">
+          <div class="scard feature"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 15c2-1 3-3 3-5V6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v4c0 2 1 4 3 5-1.5 3-5 5-8 5s-6.5-2-8-5z"/></svg></div><h4>Sales &amp; Customer Contact — Telemarketing, Telesales &amp; Money Sorting</h4><p>Trained agents who represent your brand professionally and drive measurable sales results across every campaign.</p></div>
+          <div class="scard feature"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div><h4>Risk &amp; Investigation — Credit Investigation</h4><p>Diligent, detail-oriented personnel who conduct thorough credit verification and risk-assessment work.</p></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="philosophy"><div class="wrap">
-    <div class="phil-grid">
-      <div>
-        <div class="kicker">Business Philosophy</div>
-        <h2>Your people are your greatest asset.</h2>
-        <p>The key to a successful business lies within the capabilities of your personnel to deliver what is expected of them. Human capital has consistently proven to be a company's most valuable asset — that's why we dedicate ourselves to providing HR support services that meet, and exceed, our partners' expectations.</p>
+  <section class="about-band"><div class="wrap">
+    <div class="about-grid">
+      <div class="about-copy">
+        <div class="kicker">Our Story</div>
+        <h2>Two decades of building trusted partnerships</h2>
+        <p>Incorporated in 2000, United Royale Corporation is a licensed outsourcing service provider, duly registered with the Department of Labor and Employment (DOLE) under Department Order No. 174, Series of 2017 (Permit No. RO1-09-23-00021). With solid years of understanding the industry, we deliver end-to-end service solutions — from sourcing and screening highly competent personnel to deploying technical, administrative, and clerical support staff across a broad spectrum of business and industries.</p>
+        <p>Backed by a paid-up capital of ₱10 million, our foundation gives partners a service provider they can rely on year-round. In URC, we provide solutions — we don't just develop clients, we nurture partnerships.</p>
+        <div class="care-row">
+          <div class="care-card"><div class="letter">C</div><h4>Competence</h4><p>Skilled personnel trained to deliver reliable results.</p></div>
+          <div class="care-card"><div class="letter">A</div><h4>Accountability</h4><p>Ownership of outcomes at every level of delivery.</p></div>
+          <div class="care-card"><div class="letter">R</div><h4>Resilience</h4><p>Dependable support through every business challenge.</p></div>
+          <div class="care-card"><div class="letter">E</div><h4>Excellence</h4><p>A relentless standard across all service lines.</p></div>
+        </div>
       </div>
-      <div class="phil-quote">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 7C5 7 3 10 3 13.5S5.5 20 9 20V17c-1.5 0-3-1-3-3.5S7.5 10 9 10V7zm10 0c-4 0-6 3-6 6.5S15.5 20 19 20v-3c-1.5 0-3-1-3-3.5S17.5 10 19 10V7z"/></svg>
-        <p>"We dedicate ourselves in providing human resources support services that will meet, if not, exceed the partners' expectations."</p>
+      <div class="mv-stack">
+        <div class="mv-card"><div class="tag">Our Mission</div><p>To help our partners maximize their business investments by providing effective and efficient human resources services in support of their respective company operations.</p></div>
+        <div class="mv-card"><div class="tag">Our Vision</div><p>To be the leading global service provider by giving top-notch quality services through our human capital and resources — meeting our partners' specific demands across a broad spectrum of businesses and industries.</p></div>
+        <div class="mv-card"><div class="tag">Compliance</div><p>Fully registered under DOLE Department Order No. 174, Series of 2017 — giving every partner confidence in the legitimacy and accountability of our deployed personnel.</p></div>
       </div>
     </div>
   </div></section>
 
-  <section class="locations"><div class="wrap">
-    <div class="sec-head">
-      <div class="kicker" style="text-align:center;">Our Locations</div>
-      <h2>Serving partners across Luzon</h2>
+  <section class="quote-sec"><div class="wrap">
+    <div class="quote-grid">
+      <div class="quote-photo"><img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=560&q=80&auto=format&fit=crop" alt="Portrait of a corporate partner who works with United Royale Corporation's deployed personnel"></div>
+      <div class="quote-box">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 7C5 7 3 10 3 13.5S5.5 20 9 20V17c-1.5 0-3-1-3-3.5S7.5 10 9 10V7zm10 0c-4 0-6 3-6 6.5S15.5 20 19 20v-3c-1.5 0-3-1-3-3.5S17.5 10 19 10V7z"/></svg>
+        <p>"United Royale's personnel have been part of our daily operations for over five years. They're well-screened, reliable, and treat our business like their own — exactly the kind of long-term partner we needed."</p>
+        <div class="who">Operations Manager<span>Long-Term Manufacturing Partner, Metro Manila</span></div>
+      </div>
     </div>
-    <div class="loc-grid">
-      <div class="loc-card"><div class="tag">Head Office · Makati</div><h3>Timstate Building</h3><p>Unit 605, 6th Floor, 5438 Timstate Building, Brgy. Bangkal, South Superhighway, Makati City, 1233</p></div>
-      <div class="loc-card"><div class="tag">Branch · Pangasinan</div><h3>Alaminos City</h3><p>03 Boton San Jose Road, Brgy. San Roque, City of Alaminos, Pangasinan, 2404</p></div>
-      <div class="loc-card"><div class="tag">Branch · Pasig</div><h3>Renaissance Center</h3><p>2/F Bramante Piazza Clubhouse, Renaissance Center, Meralco Avenue, Ugong, Pasig City</p></div>
+  </div></section>
+
+  <section class="teaser-band"><div class="wrap">
+    <div class="sec-head">
+      <div class="kicker" style="text-align:center;">Stay Connected</div>
+      <h2>Careers, milestones &amp; HR insight</h2>
+    </div>
+    <div class="teaser-grid">
+      <div class="teaser-card">
+        <div class="tag">We're Hiring</div>
+        <h4>Join Our Growing Team</h4>
+        <p>Experienced professionals and newly graduates alike are welcome — we're always looking for skilled, motivated personnel to deploy to our partners.</p>
+        <a class="link">Apply Now →</a>
+      </div>
+      <div class="teaser-card">
+        <div class="tag">Milestone</div>
+        <h4>26 Years and Counting</h4>
+        <p>From a single Makati office in 2000 to three regional locations today, our journey keeps growing alongside every partner we serve.</p>
+        <a class="link">Read Our Story →</a>
+      </div>
+      <div class="teaser-card">
+        <div class="tag">HR Insight</div>
+        <h4>Why Outsourcing Support Roles Pays Off</h4>
+        <p>A short read on how the right staffing partner frees up your core team to focus on what matters most to your business.</p>
+        <a class="link">Learn More →</a>
+      </div>
     </div>
   </div></section>
 
   <section class="cta-band"><div class="wrap">
-    <div><h3>Ready to strengthen your workforce?</h3><p>Let's talk about your manpower and HR support needs.</p></div>
-    <a class="btn-gold">Contact Our Team →</a>
+    <div><h3>Ready to strengthen your workforce?</h3><p>Let's talk about your manpower and HR support needs — no obligation, just a conversation.</p></div>
+    <div class="actions">
+      <a class="btn-white">Contact Our Team →</a>
+      <a class="cta-btn" style="background:var(--brick);">Request a Proposal</a>
+    </div>
   </div></section>
 
   <section>
     <div class="wrap">
-      <div class="sec-head" style="margin-bottom:52px;">
+      <div class="sec-head" style="margin-bottom:44px;">
         <div class="kicker" style="text-align:center;">Contact Us</div>
         <h2>Let's build your team together</h2>
       </div>
+      <div class="loc-row">
+        <div class="loc-card"><div class="tag">Head Office · Makati</div><h4>Timstate Building</h4><p>Unit 605, 6th Floor, 5438 Timstate Building, Brgy. Bangkal, South Superhighway, Makati City, 1233</p></div>
+        <div class="loc-card"><div class="tag">Branch · Pangasinan</div><h4>Alaminos City</h4><p>03 Boton San Jose Road, Brgy. San Roque, City of Alaminos, Pangasinan, 2404</p></div>
+        <div class="loc-card"><div class="tag">Branch · Pasig</div><h4>Renaissance Center</h4><p>2/F Bramante Piazza Clubhouse, Renaissance Center, Meralco Avenue, Ugong, Pasig City</p></div>
+      </div>
       <div class="contact-grid">
         <div>
-          <div class="info-item"><div class="ic">📍</div><div><h4>Head Office</h4><p>Unit 605, 6th Floor, 5438 Timstate Building, Brgy. Bangkal, South Superhighway, Makati City, 1233</p></div></div>
-          <div class="info-item"><div class="ic">📞</div><div><h4>Phone</h4><p>(02) 8 852-0651</p></div></div>
-          <div class="info-item"><div class="ic">✉️</div><div><h4>Email</h4><p>unitedroyalecorporation@gmail.com</p></div></div>
-          <div class="info-item"><div class="ic">🕘</div><div><h4>Office Hours</h4><p>Monday – Friday, 9:00 AM – 6:00 PM</p></div></div>
+          <div class="info-item"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg></div><div><h4>Head Office</h4><p>Unit 605, 6th Floor, 5438 Timstate Building, Brgy. Bangkal, South Superhighway, Makati City, 1233</p></div></div>
+          <div class="info-item"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v2a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 1H6a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L7 9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7A2 2 0 0 1 22 16.9z"/></svg></div><div><h4>Phone</h4><p>(02) 8 852-0651</p></div></div>
+          <div class="info-item"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div><div><h4>Email</h4><p>unitedroyalecorporation@gmail.com</p></div></div>
+          <div class="info-item"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg></div><div><h4>Office Hours</h4><p>Monday – Friday, 9:00 AM – 6:00 PM</p></div></div>
         </div>
         <div class="form-card">
           <label>Full Name</label><div class="field">Juan Dela Cruz</div>
           <label>Email Address</label><div class="field">juan@company.com</div>
           <label>Message</label><div class="field area">Tell us about your manpower needs...</div>
-          <a class="btn-gold" style="display:block; text-align:center;">Submit Inquiry</a>
+          <a class="btn-primary" style="display:block; text-align:center;">Submit Inquiry</a>
         </div>
       </div>
     </div>
@@ -257,10 +363,14 @@
 
   <footer><div class="wrap">
     <div class="foot-grid">
-      <div><h5>United Royale Corporation</h5><p style="max-width:280px;">Human resources support services designed to meet — and exceed — our partners' expectations.</p></div>
+      <div>
+        <h5>United Royale Corporation</h5>
+        <p style="max-width:280px;">Human resources support services designed to meet — and exceed — our partners' expectations, for over two decades.</p>
+        <a class="cta-btn foot-cta">Request a Consultation</a>
+      </div>
       <div><h5>Company</h5><ul><li>About Us</li><li>Core Values</li><li>Careers</li></ul></div>
-      <div><h5>Services</h5><ul><li>Janitorial &amp; Maintenance</li><li>Administrative Support</li><li>Telemarketing</li></ul></div>
-      <div><h5>Contact</h5><ul><li>unitedroyalecorporation@gmail.com</li><li>(02) 8 852-0651</li><li>Makati City</li></ul></div>
+      <div><h5>Services</h5><ul><li>Facilities &amp; Support</li><li>Administrative &amp; Back-Office</li><li>Sales &amp; Investigation</li></ul></div>
+      <div><h5>Contact</h5><ul><li>unitedroyalecorporation@gmail.com</li><li>(02) 8 852-0651</li><li>Makati · Pangasinan · Pasig</li></ul></div>
     </div>
     <div class="foot-bottom"><span>© 2026 United Royale Corporation.</span><span>UI/UX Concept — Modern Professional Direction</span></div>
   </div></footer>
