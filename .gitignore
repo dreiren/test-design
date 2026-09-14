@@ -1,1 +1,4 @@
 node_modules/
+apps/fgdlaw/node_modules
+apps/fgdlaw/.next
+.next
